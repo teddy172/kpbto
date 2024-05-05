@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\mulaiSesi;
+use App\Http\Controllers\pageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +15,12 @@ use App\Http\Middleware\mulaiSesi;
 |
 */
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::get('/', [pageController::class, 'index']);
 
 Route::get('/dbconn', function(){
     return view('dbconn');
 });
 
-Route::get('/odp', function(){
-    return view('odp');
-});
+Route::get('/odp', [pageController::class, 'odp']);
+
+Route::get('/login', [pageController::class, 'login']);

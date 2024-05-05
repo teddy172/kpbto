@@ -35,7 +35,7 @@
 						</li>
 					<ul class="daftar-link">
 						<li class="nav-link">
-							<a href="index">
+							<a href="/">
 								<i class='bx bxs-home-circle icon'></i>
 								<span class="teks nav-teks">Dashboard</span>
 							</a>
