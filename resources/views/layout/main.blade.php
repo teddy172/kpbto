@@ -97,9 +97,10 @@
 	<!----------------- content ----------------->
 	<section class="rumah">
         <div class="bootstrap-iso">
-		    <div class="kontainer">
-                @yield('kontainer')
-		    </div>
+			@yield('kontainer')
+		    <!-- <div class="kontainer">
+                
+		    </div> -->
         </div>
 	</section>
 	<script src="../Js/skrip.js"></script>

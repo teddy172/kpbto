@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\mulaiSesi;
 use App\Http\Controllers\pageController;
+use App\Http\Controllers\odcController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,7 @@ Route::get('/dbconn', function(){
 });
 
 Route::get('/odp', [pageController::class, 'odp']);
+
+route::resource('/odc', odcController::class);
 
 Route::get('/login', [pageController::class, 'login']);

@@ -1,7 +1,8 @@
 @extends('layout/main')<!-- ini kode parent -->
 
 @section('kontainer')<!-- kodenya tulis disini -->
-<table class="table">
+<div class="kontainer">
+	<table class="table">
 				<thead>
 					<tr>
 						<th scope="col">NO</th>
@@ -32,5 +33,6 @@
 							<td>@twitter</td>
 					</tr>
 				</tbody>
-				</table> 
+	</table> 
+</div>
 @endsection

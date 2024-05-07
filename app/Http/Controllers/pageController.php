@@ -15,6 +15,9 @@ class pageController extends Controller
     function odp(){
         return view("odp");
     }
+    function odc(){
+        return view("odc");
+    }
 
         
 }
