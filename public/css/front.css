@@ -1,0 +1,107 @@
+.bagian{
+    padding: 25px;  
+}
+
+.kontainer{
+    width: 80%;
+	margin: 0 auto;
+}
+
+.kontainer:after{
+    content: '';
+	display: block;
+	clear: both;
+}
+
+.kolom{
+    width:25%;
+    height: 430px;
+    border: 1px solid#ccc;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.daftarkategori{
+    width:10%;
+    height: 100px;
+    border: 1px solid;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.daftarkategori i{
+    text-align: center;
+}
+
+.daftarkategori p{
+    text-align: center;
+}
+
+.kolom .harga{
+    font-weight: bold;
+    color: #C70039;
+    float: right;
+    
+}
+
+.kotak{
+    background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 15px;
+	box-sizing: border-box;
+	margin: 10px 0 25px 0;
+}
+.kotak:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.kotak:hover{
+    box-shadow:  0 0 3px #999;
+}
+
+.catatankaki{
+    padding: 25px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+.produkdetaila{
+    width: 50%;
+    min-height: 200px;
+    border: 1px solid;
+    padding: 10px;
+    box-sizing: border-box;
+    float: left;
+    border-color: #f9f9f9;
+}
+
+.produkdetaila img{
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.produkdetail{
+    width: 50%;
+    min-height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    float: left;
+    border-color: #ccc;
+}
+
+.produkdetail p{
+    margin: 15px 0;
+    font-size: small;
+    line-height: 15px;
+}
+
+.produkdetail h4{
+    margin-bottom: 10px;
+}

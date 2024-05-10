@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	--body-color: #e4e9f7;
+	--barsamping-color: #fff;
+	--primary-color: #695cfe;
+	--primary-color-light: #f6f5ff;
+	--toggle-color: #ddd;
+	--teks-color: #707070;
+
+	--tran-02: all 0.2s ease;
+	--tran-03: all 0.3s ease;
+	--tran-04: all 0.4s ease;
+	--tran-05: all 0.5s ease;
+}
+body{
+height: 100vh;
+background: var(--body-color);
+}
+
+.kontainer{
+	width: 95%;
+	margin: 0 auto;
+	border: 1px solid rgb(255, 255, 255);
+	border-radius: 10px;
+	background: var(--primary-color-light);
+}
+
+/* ======== barsamping ========*/
+.navigasi{
+	display: flex;
+}
+
+.barsamping{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 250px;
+	padding: 10px 14px;
+	background: var(--barsamping-color);
+	transition: var(--tran-05);
+	z-index: 100;
+}
+
+.barsamping.tutup{
+	width: 80px;
+}
+
+
+/* ======== css reuseable ========*/
+.barsamping .teks{
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--teks-color);
+	transition: var(--tran-03);
+	white-space: nowrap;
+	opacity: 1;
+}
+
+.barsamping.tutup .teks{
+	opacity: 0;
+}
+
+.barsamping .image{
+	min-width: 60px;
+	display: flex;
+	align-items: center;
+}
+
+.barsamping li{
+	height: 50px;
+	margin-top: 10px;
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+.barsamping li .icon{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 60px;
+	font-size: 20px;
+}
+
+.barsamping li .icon,
+.barsamping li .teks{
+	color: var(--teks-color);
+	transition: var(--tran-02);
+}
+
+.barsamping header{
+	position: relative;
+}
+
+.barsamping .image-teks img{
+	width: 40px;
+	border-radius: 6px;
+}
+
+.barsamping header .image-teks{
+	display: flex;
+	align-items: center;
+}
+
+.barsamping .image-teks .kepala-teks{
+	display: flex;
+	flex-direction: column;
+}
+
+.kepala-teks .name{
+	font-weight: 600;
+}
+
+.barsamping header .toggle{
+	position: absolute;
+	top: 50%;
+	right: -35px;
+	transform: translateY(-50%) rotate(180deg);
+	height: 40px;
+	width: 40px;
+	background: var(--primary-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	color: var(--barsamping-color);
+	font-size: 22px;
+	transition: var(--tran-03);
+}
+
+.barsamping.tutup header .toggle{
+	transform: translateY(-50%);
+}
+
+.barsamping .kotak-pencarian{
+	background: var(--primary-color-light);
+	border-radius: 6px;
+}
+
+.kotak-pencarian input{
+	height: 100%;
+	width: 100%;
+	outline: none;
+	border: none;
+	border-radius: 6px;
+	background: var(--primary-color-light);
+	
+}
+
+.tombol-pencarian{
+	height: 100%;
+}
+
+.barsamping li a{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: var(--tran-04);
+}
+
+.barsamping li a:hover{
+	background: var(--primary-color);
+}
+
+.barsamping li a:hover .icon,
+.barsamping li a:hover .teks{
+	color: var(--barsamping-color);
+}
+
+.barsamping .daftar{
+	margin-top: 35px;
+}
+
+.rumah{
+	margin-top: 25px;
+	position: relative;
+	height: 100vh;
+	left: 250px;
+	width: calc(100% - 250px);
+	background: var(--body-color);
+	transition: var(--tran-05);
+}
+
+.barsamping.tutup ~ .rumah{
+	left: 88px;
+	width: calc(100% - 88px);
+}
+
+/* ============================================== */
+#hal-masuk {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+.kotak-masuk {
+	width: 300px;
+	min-height: 200px;
+	border: 1px solid var(--toggle-color);
+	background-color: var(--primary-color-light);
+	padding: 15px;
+	box-sizing: border-box;
+	border-radius: 15px;
+}
+.kotak-masuk h2{
+	text-align: center;
+	margin-bottom: 15px;
+}
+.kontrol-masukan {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+}
+.tombol-masukan {
+	padding: 8px;
+	background-color: var(--primary-color);
+	color: var(--primary-color-light);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
