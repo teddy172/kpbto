@@ -14,11 +14,11 @@ class odcSeeder extends Seeder
     public function run(): void
     {
         DB::table('odc')->insert([
-            'nama_odc' => 'ODC-KBL-FAG',
-            'lokasi' => 'pogot',
-            'kordinat' => '-7.233037, 112.771035',
+            'nama_odc' => 'ODC-KBL-FAB',
+            'lokasi' => 'sidotopo wetan',
+            'kordinat' => '-7.233031, 112.772501',
             'slot' => '25',
-            'sisa_slot' => '6',
+            'sisa_slot' => '8',
             'port' => '300',
             'sisa_port' => '72',
             'status' => 'up',

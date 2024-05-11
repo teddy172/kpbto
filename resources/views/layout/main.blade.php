@@ -30,8 +30,9 @@
 			<div class="daftar-bar">
 				<div class="daftar">
 						<li class="kotak-pencarian">
-								<button class="tombol-pencarian"><i class='bx bx-search-alt-2 icon'></i></button>
-								<input type="search" placeholder="Search..">
+								<input type="search" placeholder="Search.." name="cari">
+								<button class="tombol-pencarian" type="submit"><i class='bx bx-search-alt-2 icon'></i></button>
+								
 						</li>
 					<ul class="daftar-link">
 						<li class="nav-link">
