@@ -17,15 +17,22 @@ use App\Http\Middleware\mulaiSesi;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dbconn', function(){
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/account', function () {
+    return view('account');
+});
+
+Route::get('/dbconn', function () {
     return view('dbconn');
 });
 
-Route::get('/odp', function(){
+Route::get('/odp', function () {
     return view('odp');
 });

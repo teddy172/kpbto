@@ -1,0 +1,60 @@
+@font-face {
+    font-family: Inter-Regular;
+    src: url(../font/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inter-Medium;
+    src: url(../font/Inter-Medium.ttf);
+}
+
+@font-face {
+    font-family: Inter-Semibold;
+    src: url(../font/Inter-SemiBold.ttf);
+}
+
+body {
+    background-image: url("../image/bg_web.png");
+}
+
+.profile-container{
+    width: 100vw;
+    height: 25vh;
+    padding: 20px;
+    background: cyan;
+    display: flex;
+    justify-content: center;
+}
+
+.data-container{
+    width: 100vw;
+    height: 80vh;
+    padding: 20px;
+    background: orange;   
+}
+
+.first-row {
+    background: purple;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-basis: 25%; */
+
+}
+
+.second-row {
+    background-color: olivedrab;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-basis: 25%; */
+
+}
