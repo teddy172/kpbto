@@ -24,46 +24,83 @@
     <div class="data-container">
         <div class= "bio-container">
             {{-- Navbar --}}
-            <div class="nav-container my-5">
+            <div class="nav-container text">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab"
                             data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
-                            aria-selected="true">PROFILE
+                            aria-selected="true" style="color: #36454F;">PROFILE
                         </button>
                         <button class="nav-link" id="nav-keamanan-tab" data-bs-toggle="tab"
                             data-bs-target="#nav-keamanan" type="button" role="tab" aria-controls="nav-keamanan"
-                            aria-selected="true">KEAMANAN
+                            aria-selected="true" style="color: #36454F;">KEAMANAN
                         </button>
                     </div>
                 </nav>
             </div>
             {{-- Navbar --}}
             {{-- Tab Page --}}
-            <div class="tab-content" id="nav-tabContent">
+            <div class="tab-content
+                            text" id="nav-tabContent">
                 {{-- Profile Page --}}
-                <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
+                <div class="tab tab-pane fade show active" id="nav-profile" role="tabpanel"
                     aria-labelledby="nav-profile-tab">
-                    <div class="first-row">
-                        <div class="mb-3" style="width: 100%">
-                            <label id="text" for="NIP" class="form-label">NIP</label>
-                            <input type="text" class="form-control" id="NIP" aria-describedby="emailHelp">
+                    <div class="row text">
+                        <div class="column">
+                            <label for="NAMA" class="form-label">NAMA</label>
+                            <input type="text" class="form-control" id="NAMA" aria-describedby="emailHelp"
+                                style="height: 50px">
+
                         </div>
-                        <div class="mb-3" style="width: 100%">
-                            <label id="text" for="password" class="form-label">PASSWORD</label>
-                            <input type="password" class="form-control" id="password">
+                        <div class="column">
+                            <label for="NO-TELEPON" class="form-label">NO TELEPON</label>
+                            <input type="text" class="form-control" id="NO-TELEPON" aria-describedby="emailHelp"
+                                style="height: 50px">
                         </div>
                     </div>
-                    <div class="second-row">
-                        <p>lorem10</p>
-
+                    <div class="row text">
+                        <div class="column">
+                            <label for="NIP" class="form-label">NIP</label>
+                            <input type="text" class="form-control" id="NIP" aria-describedby="emailHelp"
+                                style="height: 50px">
+                        </div>
+                        <div class="column">
+                            <label for="EMAIL" class="form-label">EMAIL</label>
+                            <input type="email" class="form-control" id="EMAIL"
+                                aria-describedby="emailHelp"style="height: 50px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column"></div>
+                        <div class="column"></div>
+                        <div class="column-one">
+                            <button type="submit" class="btn btn-primary"
+                                style="color: #FAFAFA;background: #00AB66;font-family:Inter-Semibold;font-size: 30px;border: none">SAVE</button>
+                        </div>
                     </div>
                 </div>
                 {{-- Keamanan Page --}}
-                <div class="tab-pane fade p-3" id="nav-keamanan" role="tabpanel" aria-labelledby="nav-keamanan-tab">
-                    <h2>Keamanan</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quis deserunt ipsa! Illo
-                        asperiores minus aut modi excepturi nesciunt numquam?</p>
+                <div class="tab tab-pane fade p-3" id="nav-keamanan" role="tabpanel" aria-labelledby="nav-keamanan-tab">
+                    <div class="row text">
+                        <div class="column">
+                            <label for="Pass-lama" class="form-label">PASSWORD LAMA</label>
+                            <input type="text" class="form-control" id="Pass-lam" aria-describedby="emailHelp"
+                                style="height: 50px">
+                        </div>
+                        <div class="column">
+                            <label for="Pass-baru" class="form-label">PASSWORD BARU</label>
+                            <input type="text" class="form-control" id="Pass-bar" aria-describedby="emailHelp"
+                                style="height: 50px">
+                        </div>
+                    </div>
+                    <div class="row" style="height: 30vh">
+                        <div class="column"></div>
+                        <div class="column"></div>
+                        <div class="column-one">
+                            <button type="submit" class="btn btn-primary"
+                                style="color: #FAFAFA;background: #00AB66;font-family:Inter-Semibold;font-size: 30px;border: none">SAVE</button>
+                        </div>
+                    </div>
                 </div>
 
             </div>

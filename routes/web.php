@@ -18,11 +18,11 @@ use App\Http\Middleware\mulaiSesi;
 //     return view('welcome');
 // });
 Route::get('/', function () {
-    return view('index');
+    return view('login');
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/index', function () {
+    return view('index');
 });
 
 Route::get('/account', function () {

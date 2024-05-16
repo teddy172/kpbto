@@ -34,10 +34,11 @@
                     My Account
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#"
+                    <li><a class="dropdown-item" href="/account"
                             style="height: 50px;width: 230px;font-size: 20px">Account Setting</a>
                     </li>
-                    <li><a class="dropdown-item" href="#" style="height: 100px;width: 200px">Sign Out</a></li>
+                    <li><a class="dropdown-item" href="#" style="height: 50px;width: 230px;font-size: 20px">Sign
+                            Out</a></li>
                 </ul>
             </div>
         </div>
