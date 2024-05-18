@@ -18,30 +18,52 @@
         <br>
         <br>
             <h1>ID ODC:</h1>
-                <h2>{{ $data->nama_odc }}</h2>
+                <h2>{{ $odc->nama_odc }}</h2>
             <br>
             <h1>lokasi:</h1>
-                <h2>{{ $data->lokasi }}</h2>
+                <h2>{{ $odc->lokasi }}</h2>
             <br>
             <h1>Kordinat:</h1>
-                <h2>{{ $data->kordinat }}</h2>
+                <h2>{{ $odc->kordinat }}</h2>
             <br>
             <h1>Slot:</h1>
-                <h2>{{ $data->slot }}</h2>
+                <h2>{{ $odc->slot }}</h2>
             <br>
             <h1>Sisa slot:</h1>
-                <h2>{{ $data->sisa_slot }}</h2>
+                <h2>{{ $odc->sisa_slot }}</h2>
             <br>
             <h1>Port:</h1>
-                <h2>{{ $data->port }}</h2>
+                <h2>{{ $odc->port }}</h2>
             <br>
             <h1>Sisa port:</h1>
-                <h2>{{ $data->sisa_port }}</h2>
+                <h2>{{ $odc->sisa_port }}</h2>
             <br>
             <h1>Status:</h1>
-                <h2>{{ $data->status }}</h2>
+                <h2>{{ $odc->status }}</h2>
+            <br>
+            <br>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">NO</th>
+                    <th scope="col">ID ODP</th>
+                    <th scope="col">Lokasi</th>                
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                @foreach ($data as $item) 
+                <!-- $item==odc_id -->
+                    <tr>
+                        <th scope="row">{{ $loop->iteration }}</th>
+                            <td>{{$item->nama_odp}}</td>
+                            <td>{{$item->lokasi_odp}}</td>
+                            <td>{{$item->status_odp}}</td>
+                        </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
-            
 </div>
 
 </body>

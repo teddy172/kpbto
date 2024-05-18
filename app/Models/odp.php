@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class odp extends Model
 {
     use HasFactory;
-    protected $table = 'ODC';
+    protected $table = 'ODP';
     protected $primaryKey = 'odp_id';
     protected $fillable = ['nama_odp', 'odc_id', 'lokasi', 'kordinat', 'slot', 'sisa_slot', 'port', 'sisa_port', 'status', 'distribusi'];
 

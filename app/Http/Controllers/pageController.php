@@ -20,14 +20,6 @@ class pageController extends Controller
     function odc(){
         return view("odc");
     }
-    public function search()
-    {
-        $odc = odc::latest();
-        if(request('cari')){
-            $odc->where('nama_odc','lokasi', '%' .request('cari'). '%');
-        };
-        return redirect('/odc')->with('data', $odc);;
-    }
 
         
 }

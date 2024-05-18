@@ -4,6 +4,10 @@
 <div class="kontainer">
     <div class="card-header">
         <h2>Daftar ODC</h2>
+        <form class="d-flex" role="search" Action="{{url('/odc/search ')}}">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="Cari">
+            <button class="btn btn-outline-success" type="submit" >Search</button>
+        </form>
     </div>
 </div>
 <br>
@@ -18,7 +22,7 @@
                         <th scope="col">NO</th>
                         <th scope="col">ID ODC</th>
                         <th scope="col">Lokasi</th>
-                        <th scope="col">ODP</th>
+                        
                         <th scope="col">Status</th>
                         <th scope="col">Actions</th>
                     </tr>
@@ -29,14 +33,11 @@
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{$item->nama_odc}}</td>
-                            <td>{{$item->lokasi_odc}}</td>
+                            <td>{{$item->lokasi}}</td>
+                            <td>{{$item->status}}</td>
                             <td>
-                                {{$item->nama_odp}}
-                            </td>
-                            <td>{{$item->status_odc}}</td>
-                            <td>
-                                <a href="{{url('/odc/'.$item->dc_id)}}" style="margin-left: 10px;"><button type="button" class="btn btn-primary">Lihat</button></a>
-                                <a href="{{url('/odc/'.$item->dc_id.'/edit')}}" style="margin-left: 10px;"><button type="button" class="btn btn-warning">Edit</button></a>
+                                <a href="{{url('/odc/'.$item->odc_id)}}" style="margin-left: 10px;"><button type="button" class="btn btn-primary">Lihat</button></a>
+                                <a href="{{url('/odc/'.$item->odc_id.'/edit')}}" style="margin-left: 10px;"><button type="button" class="btn btn-warning">Edit</button></a>
                                 
                             </td>
                     </tr>

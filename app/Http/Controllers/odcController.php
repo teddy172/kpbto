@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\odc; //data diambil dari database melalui model
-use App\models\odp;
+use App\Models\odp;
 use Illuminate\Support\Facades\DB;
 
 class odcController extends Controller
@@ -16,17 +16,7 @@ class odcController extends Controller
     public function index()//function table odc
     {
         $odc = odc::orderBY('odc_id', 'asc')->paginate(10); //membatasi data yang diambil dengan paginate
-        $data = DB::table('odc')
-                ->leftJoin('odp', 'odc.odc_id', '=', 'odp.odc_id')
-                ->orderBy('odc.odc_id')
-                ->select('odc.odc_id as dc_id', 'odc.nama_odc', 'odc.lokasi as lokasi_odc', 'odc.kordinat as kordinat_odc', 'odc.slot as slot_odc', 
-                         'odc.sisa_slot as sisa_slot_odc', 'odc.port as port_odc', 'odc.sisa_port as sisa_port_odc', 'odc.status as status_odc', 
-                         'odp.odp_id as dp_id', 'odp.nama_odp', 'odp.odc_id as foreign', 'odp.lokasi as lokasi_odp', 'odp.kordinat as kordinat_odp', 
-                         'odp.slot as slot_odp', 'odp.sisa_slot as sisa_slot_odp', 'odp.port as port_odp', 'odp.sisa_port as sisa_port_odp', 
-                         'odp.status as status_odp', 'odp.distribusi as distribusi_odp')
-                ->paginate(10);
-
-        return view ('odc')->with('data', $data); //mengembalikan tampilan ke odc bersama variabel data
+        return view ('odc')->with('data', $odc); //mengembalikan tampilan ke odc bersama variabel data
     }
 
     /**
@@ -61,14 +51,14 @@ class odcController extends Controller
             'sisa_port' => 'required',
             'status' => 'required',
         ],[
-            'nama_odc.required'=>'ID ODC tidak boloh kosong',
-            'lokasi.required'=>'Lokasi tidak boloh kosong',
-            'kordinat.required'=>'Kordinat tidak boloh kosong',
-            'slot.required'=>'Slot tidak boloh kosong',
-            'sisa_slot.required'=>'Sisa slot tidak boloh kosong',
-            'port.required'=>'Port tidak boloh kosong',
-            'sisa_port.required'=>'Sisa port tidak boloh kosong',
-            'status.required'=>'Status tidak boloh kosong',
+            'nama_odc.required'=>'ID ODC tidak boleh kosong',
+            'lokasi.required'=>'Lokasi tidak boleh kosong',
+            'kordinat.required'=>'Kordinat tidak boleh kosong',
+            'slot.required'=>'Slot tidak boleh kosong',
+            'sisa_slot.required'=>'Sisa slot tidak boleh kosong',
+            'port.required'=>'Port tidak boleh kosong',
+            'sisa_port.required'=>'Sisa port tidak boleh kosong',
+            'status.required'=>'Status tidak boleh kosong',
         ]);
         $data = [
             'nama_odc' => $request->input('nama_odc'),
@@ -90,8 +80,18 @@ class odcController extends Controller
      */
     public function show($odc_id)
     {
+        $data = DB::table('odc')
+                ->leftJoin('odp', 'odc.odc_id', '=', 'odp.odc_id')
+                ->orderBy('odc.odc_id')
+                ->where('odc.odc_id', $odc_id)
+                ->select('odc.odc_id as dc_id', 'odc.nama_odc', 'odc.lokasi as lokasi_odc', 'odc.kordinat as kordinat_odc', 'odc.slot as slot_odc', 
+                         'odc.sisa_slot as sisa_slot_odc', 'odc.port as port_odc', 'odc.sisa_port as sisa_port_odc', 'odc.status as status_odc', 
+                         'odp.odp_id as dp_id', 'odp.nama_odp', 'odp.odc_id as foreign', 'odp.lokasi as lokasi_odp', 'odp.kordinat as kordinat_odp', 
+                         'odp.slot as slot_odp', 'odp.sisa_slot as sisa_slot_odp', 'odp.port as port_odp', 'odp.sisa_port as sisa_port_odp', 
+                         'odp.status as status_odp', 'odp.distribusi as distribusi_odp')
+                ->paginate(15);
         $odc = odc::where('odc_id', $odc_id)->first();
-        return view('odcDetail')->with('data', $odc);
+        return view('odcDetail', ['data' => $data, 'odc' => $odc]);
         // return "<h1>nama odc dengan id $odc_id</h1>";
     }
 
@@ -119,14 +119,14 @@ class odcController extends Controller
             'sisa_port' => 'required',
             'status' => 'required',
         ],[
-            'nama_odc.required'=>'ID ODC tidak boloh kosong',
-            'lokasi.required'=>'Lokasi tidak boloh kosong',
-            'kordinat.required'=>'Kordinat tidak boloh kosong',
-            'slot.required'=>'Slot tidak boloh kosong',
-            'sisa_slot.required'=>'Sisa slot tidak boloh kosong',
-            'port.required'=>'Port tidak boloh kosong',
-            'sisa_port.required'=>'Sisa port tidak boloh kosong',
-            'status.required'=>'Status tidak boloh kosong',
+            'nama_odc.required'=>'ID ODC tidak boleh kosong',
+            'lokasi.required'=>'Lokasi tidak boleh kosong',
+            'kordinat.required'=>'Kordinat tidak boleh kosong',
+            'slot.required'=>'Slot tidak boleh kosong',
+            'sisa_slot.required'=>'Sisa slot tidak boleh kosong',
+            'port.required'=>'Port tidak boleh kosong',
+            'sisa_port.required'=>'Sisa port tidak boleh kosong',
+            'status.required'=>'Status tidak boleh kosong',
         ]);
         $data = [
             'nama_odc' => $request->input('nama_odc'),
@@ -153,4 +153,11 @@ class odcController extends Controller
     /**
      * mencari data terkait melalui fitur search.
      */
+    public function CARI(Request $request)
+    {
+        $cari = $request->Cari;
+        $odc = odc::where('nama_odc', 'like', "%".$cari."%")->orwhere('lokasi', 'like', "%".$cari."%")
+                ->paginate(10);
+        return view('odc')->with('data', $odc);
+    }
 }

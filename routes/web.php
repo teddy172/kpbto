@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\mulaiSesi;
 use App\Http\Controllers\pageController;
 use App\Http\Controllers\odcController;
+use App\Http\Controllers\odpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,18 +24,7 @@ Route::get('/dbconn', function(){
 });
 
 Route::get('/login', [pageController::class, 'login']);//halaman login
-Route::get('/search', [pageController::class, 'cari']);//search
+Route::get('/odc/search', [odcController::class, 'CARI']);//search odc
 
-Route::get('/odp', [pageController::class, 'odp']);//halaman odp
-
-Route::resource('/odc', odcController::class);
-
-
-
-//halaman odc
-// Route::get('/odc', [pageController::class, 'odc']);
-//memanggil fungsi index di odccontroller dan tampilkan semua data odc di table
-// route::get('odc', [odcController::class, 'index']);
-//menampilkan data odc berdasarkan id
-// route::get('odc/{odc_id}', [odcController::class, 'show'])->where('odc_id', '[0-9]');
-//route all in one dimana akan menerjemahkan tiap class berdasarkan method
+Route::resource('/odc', odcController::class);//halaman odc
+Route::resource('/odp', odpController::class);//halaman odp
