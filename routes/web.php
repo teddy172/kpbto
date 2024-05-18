@@ -25,6 +25,7 @@ Route::get('/dbconn', function(){
 
 Route::get('/login', [pageController::class, 'login']);//halaman login
 Route::get('/odc/search', [odcController::class, 'CARI']);//search odc
+Route::get('/odp/search', [odpController::class, 'CARI']);//search odp
 
 Route::resource('/odc', odcController::class);//halaman odc
 Route::resource('/odp', odpController::class);//halaman odp

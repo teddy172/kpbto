@@ -46,14 +46,6 @@
                 <input type="text" class="form-control" name="kordinat" value="{{ Session::get('kordinat')}}">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Slot</label>
-                <input type="text" class="form-control" name="slot" value="{{ Session::get('slot')}}">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Sisa slot</label>
-                <input type="text" class="form-control" name="sisa_slot" value="{{ Session::get('sisa_slot')}}">
-            </div>
-            <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Port</label>
                 <input type="text" class="form-control" name="port" value="{{ Session::get('port')}}">
             </div>

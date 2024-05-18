@@ -17,8 +17,6 @@ return new class extends Migration
             $table->unsignedBigInteger('odc_id');
             $table->string('lokasi', length: 100);
             $table->string('kordinat', length: 100);
-            $table->integer('slot');
-            $table->integer('sisa_slot');
             $table->integer('port');
             $table->integer('sisa_port');
             $table->string('status');

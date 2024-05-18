@@ -26,12 +26,6 @@
             <h1>Kordinat:</h1>
                 <h2>{{ $odp->kordinat}}</h2>
             <br>
-            <h1>Slot:</h1>
-                <h2>{{ $odp->slot}}</h2>
-            <br>
-            <h1>Sisa slot:</h1>
-                <h2>{{ $odp->sisa_slot}}</h2>
-            <br>
             <h1>Port:</h1>
                 <h2>{{ $odp->port}}</h2>
             <br>

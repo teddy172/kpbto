@@ -36,14 +36,6 @@
                 <input type="text" class="form-control" name="kordinat" value="{{ $data->kordinat}}">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Slot</label>
-                <input type="text" class="form-control" name="slot" value="{{ $data->slot}}">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Sisa slot</label>
-                <input type="text" class="form-control" name="sisa_slot" value="{{ $data->sisa_slot}}">
-            </div>
-            <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Port</label>
                 <input type="text" class="form-control" name="port" value="{{ $data->port}}">
             </div>

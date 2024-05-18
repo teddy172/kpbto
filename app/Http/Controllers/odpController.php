@@ -37,8 +37,6 @@ class odpController extends Controller
         Session::flash('odc_id', $request->odc_id);
         Session::flash('lokasi', $request->lokasi);
         Session::flash('kordinat', $request->kordinat);
-        Session::flash('slot', $request->slot);
-        Session::flash('sisa_slot', $request->sisa_slot);
         Session::flash('port', $request->port);
         Session::flash('sisa_port', $request->sisa_port);
         Session::flash('status', $request->status);
@@ -49,8 +47,6 @@ class odpController extends Controller
             'odc_id' => 'required',
             'lokasi' => 'required',
             'kordinat' => 'required',
-            'slot' => 'required',
-            'sisa_slot' => 'required',
             'port' => 'required',
             'sisa_port' => 'required',
             'status' => 'required',
@@ -60,8 +56,6 @@ class odpController extends Controller
             'odc_id.required'=>'ID ODC tidak boleh kosong',
             'lokasi.required'=>'Lokasi tidak boleh kosong',
             'kordinat.required'=>'Kordinat tidak boleh kosong',
-            'slot.required'=>'Slot tidak boleh kosong',
-            'sisa_slot.required'=>'Sisa slot tidak boleh kosong',
             'port.required'=>'Port tidak boleh kosong',
             'sisa_port.required'=>'Sisa port tidak boleh kosong',
             'status.required'=>'Status tidak boleh kosong',
@@ -72,8 +66,6 @@ class odpController extends Controller
             'odc_id' => $request->input('odc_id'),
             'lokasi' => $request->input('lokasi'),
             'kordinat' => $request->input('kordinat'),
-            'slot' => $request->input('slot'),
-            'sisa_slot' => $request->input('sisa_slot'),
             'port' => $request->input('port'),
             'sisa_port' => $request->input('sisa_port'),
             'status' => $request->input('status'),
@@ -111,8 +103,6 @@ class odpController extends Controller
             'nama_odp' => $request->input('nama_odp'),
             'lokasi' => $request->input('lokasi'),
             'kordinat' => $request->input('kordinat'),
-            'slot' => $request->input('slot'),
-            'sisa_slot' => $request->input('sisa_slot'),
             'port' => $request->input('port'),
             'sisa_port' => $request->input('sisa_port'),
             'status' => $request->input('status'),
@@ -127,5 +117,12 @@ class odpController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function CARI(Request $request)
+    {
+        $cari = $request->Cari;
+        $odp = odp::where('nama_odp', 'like', "%".$cari."%")->orwhere('lokasi', 'like', "%".$cari."%")
+                ->paginate(10);
+        return view('odp')->with('data', $odp);
     }
 }

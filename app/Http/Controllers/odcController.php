@@ -87,7 +87,7 @@ class odcController extends Controller
                 ->select('odc.odc_id as dc_id', 'odc.nama_odc', 'odc.lokasi as lokasi_odc', 'odc.kordinat as kordinat_odc', 'odc.slot as slot_odc', 
                          'odc.sisa_slot as sisa_slot_odc', 'odc.port as port_odc', 'odc.sisa_port as sisa_port_odc', 'odc.status as status_odc', 
                          'odp.odp_id as dp_id', 'odp.nama_odp', 'odp.odc_id as foreign', 'odp.lokasi as lokasi_odp', 'odp.kordinat as kordinat_odp', 
-                         'odp.slot as slot_odp', 'odp.sisa_slot as sisa_slot_odp', 'odp.port as port_odp', 'odp.sisa_port as sisa_port_odp', 
+                         'odp.port as port_odp', 'odp.sisa_port as sisa_port_odp', 
                          'odp.status as status_odp', 'odp.distribusi as distribusi_odp')
                 ->paginate(15);
         $odc = odc::where('odc_id', $odc_id)->first();

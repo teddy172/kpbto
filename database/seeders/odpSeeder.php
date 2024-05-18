@@ -15,11 +15,9 @@ class odpSeeder extends Seeder
     {
         DB::table('odp')->insert([
             'nama_odp' => 'ODp-KBL-FAB/12',
-            'odc_id' => '2',
+            'odc_id' => '1',
             'lokasi' => 'surabaya',
             'kordinat' => '-7.233031, 112.774501',
-            'slot' => '1',
-            'sisa_slot' => '0',
             'port' => '8',
             'sisa_port' => '0',
             'status' => 'up',
