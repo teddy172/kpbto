@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'NIP',
+        'nomer_telepon',
     ];
 
     /**
@@ -42,4 +44,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function Absensi() : HasMany
+    {
+        return $this->hasMany(absensi::class, 'user_id');
+    }
 }

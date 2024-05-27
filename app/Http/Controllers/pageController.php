@@ -11,15 +11,5 @@ class pageController extends Controller
     function index(){
         return view("index");
     }
-    function login(){
-        return view("login");
-    }
-    function odp(){
-        return view("odp");
-    }
-    function odc(){
-        return view("odc");
-    }
-
-        
+   
 }

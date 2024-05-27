@@ -14,7 +14,7 @@
 <div class="">
     @include('/layout/pesan')
     <div class="kartu">
-        <a href='/ODP'><button type="button" class="btn btn-primary" style="position: relative; left:30px; top:20px;">Kembali</button></a>
+        <a href='/odp'><button type="button" class="btn btn-primary" style="position: relative; left:30px; top:20px;">Kembali</button></a>
         <br>
         <br>
         <h1 style="text-align: center;">Update ODP</h1>

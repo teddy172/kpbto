@@ -12,6 +12,7 @@
 
     <!----------------- sidebar ----------------->
 	<!-- <section class="navigasi"> -->
+		
 		<nav class="barsamping tutup">
 			<header>
 				<div class="image-teks">
@@ -43,12 +44,14 @@
 						</li>
 					</ul>
 					<ul class="daftar-link">
+					@if(Session()->has('profilTeknisi'))
 						<li class="nav-link">
-							<a href="profil">
+							<a href="{{url('/profil/'.Session('profilTeknisi')->id)}}">
 								<i class='bx bx-user-circle icon'></i>
 								<span class="teks nav-teks">Profil</span>
 							</a>
 						</li>
+					@endif
 					</ul>
 					<ul class="daftar-link">
 						<li class="nav-link">
@@ -84,7 +87,7 @@
 					</ul>
                     <ul class="daftar-link">
 						<li class="nav-link">
-							<a href="logout">
+							<a href="{{ url('/logout') }}">
                                 <i class='bx bx-power-off icon'></i>
 								<span class="teks nav-teks">Logout</span>
 							</a>
@@ -93,6 +96,8 @@
 				</div>
 			</div>
 		</nav>
+		
+		
 	<!-- </section> -->
 
 	<!----------------- content ----------------->
