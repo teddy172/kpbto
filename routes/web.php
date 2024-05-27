@@ -25,6 +25,26 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/presensi', function () {
+    return view('presensi');
+});
+
+Route::get('/cariodc', function () {
+    return view('cariodc');
+});
+
+Route::get('/tambahodc', function () {
+    return view('tambahodc');
+});
+
+Route::get('/cariodp', function () {
+    return view('cariodp');
+});
+
+Route::get('/tambahodp', function () {
+    return view('tambahodp');
+});
+
 Route::get('/account', function () {
     return view('account');
 });

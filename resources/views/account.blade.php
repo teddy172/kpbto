@@ -18,6 +18,23 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     {{-- Bootstrap JS --}}
+
+    {{-- Navbar --}}
+    <div class="nav-container-navbar">
+        <div class="nav-bar-navbar">
+            <div class="row">
+                <div class="column">
+                    <a href="/index"><img src="../image/home.png" alt=""></a>
+                </div>
+                <div class="text column-one" id="text" style="color: #FFFFFF">
+                    PROFILE
+                </div>
+                <div class="column">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="profile-container">
         <img src="../image/profile-icon.png" alt=""><a href=""></a>
     </div>
@@ -80,7 +97,8 @@
                     </div>
                 </div>
                 {{-- Keamanan Page --}}
-                <div class="tab tab-pane fade p-3" id="nav-keamanan" role="tabpanel" aria-labelledby="nav-keamanan-tab">
+                <div class="tab tab-pane fade p-3" id="nav-keamanan" role="tabpanel"
+                    aria-labelledby="nav-keamanan-tab">
                     <div class="row text">
                         <div class="column">
                             <label for="Pass-lama" class="form-label">PASSWORD LAMA</label>

@@ -48,7 +48,7 @@
             Navigation Off
             <span>
                 <button type="button" class="btn btn-primary"
-                    style="margin-left: 10px;    font-family: Inter-Semibold;
+                    style="margin-left: 10px; font-family: Inter-Semibold;
     font-size: 30px;
     color: #FFFFFF;">Start<img
                         src="../image/Play.png" style="width:64px;height: 64px;"></button>
@@ -61,7 +61,7 @@
     </div>
     <div class="menu-container">
         <div class="first-row">
-            <div class="card presensi"><a href="#" style="text-decoration: none">
+            <div class="card presensi"><a href="/presensi" style="text-decoration: none">
                     <div class="icon-bg" style="background: #4DAF4E"><img class="menu-icon"
                             src="../image/presensi-icon.png"></div>
                     <div class="card text"> PRESENSI </div>
@@ -93,13 +93,13 @@
                     <div class="card text"> MAINTENANCE </div>
                 </a>
             </div>
-            <div class="card presensi"><a href="#" style="text-decoration: none">
+            <div class="card presensi"><a href="/cariodc" style="text-decoration: none">
                     <div class="icon-bg" style="background: #D40033"><img class="menu-icon" src="../image/odc-icon.png">
                     </div>
                     <div class="card text"> CARI ODC </div>
                 </a>
             </div>
-            <div class="card presensi"><a href="#" style="text-decoration: none">
+            <div class="card presensi"><a href="/cariodp" style="text-decoration: none">
                     <div class="icon-bg" style="background: #FB8C00"><img class="menu-icon"
                             src="../image/odp-icon.png"></div>
                     <div class="card text"> CARI ODP </div>
