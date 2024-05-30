@@ -7,7 +7,9 @@ use App\Http\Controllers\profilController;
 use App\Http\Controllers\odcController;
 use App\Http\Controllers\odpController;
 use App\Http\Controllers\sessionController;
+use App\Http\Controllers\presensiController;
 use Illuminate\Auth\Middleware\Authenticate;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +42,5 @@ Route::get('/profil/{User}', [profilController::class, 'index']);
 Route::get('/profil/{User}/edit', [profilController::class, 'edit']);
 Route::put('/profil/{User}', [profilController::class, 'update']);
 
-Route::post('/presensi', [presensiController::class, 'attendance']);
+Route::get('/absen', [presensiController::class, 'index']);
+Route::post('/presensi', [presensiController::class, 'kehadiran']);

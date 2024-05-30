@@ -15,5 +15,30 @@
     <a href='/'><button type="button" class="btn btn-primary" style="position: relative; left:40px; top:20px;">Kembali</button></a>
         <br>
         <br>
+        <p>Checked In: {{ $hasCheckedIn ? 'Yes' : 'No' }}</p>
+        <p>Checked Out: {{ $hasCheckedOut ? 'Yes' : 'No' }}</p>
+
+
+         @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+    <form action="{{ url('/presensi') }}" method="POST">
+        @csrf
+        <button type="submit" class="btn btn-primary">
+            @if($hasCheckedIn && !$hasCheckedOut)
+                Check Out
+            @else
+                Check In
+            @endif
+        </button>
+    </form>
 </body>
 </html>
