@@ -31,13 +31,12 @@
 			<div class="daftar-bar">
 				<div class="daftar">
 						<li class="kotak-pencarian">
+								<button class="tombol-pencarian"><i class='bx bx-search-alt-2 icon'></i></button>
 								<input type="search" placeholder="Search.." name="cari">
-								<button class="tombol-pencarian" type="submit"><i class='bx bx-search-alt-2 icon'></i></button>
-								
 						</li>
 					<ul class="daftar-link">
 						<li class="nav-link">
-							<a href="/">
+							<a href="index">
 								<i class='bx bxs-home-circle icon'></i>
 								<span class="teks nav-teks">Dashboard</span>
 							</a>
@@ -96,17 +95,14 @@
 				</div>
 			</div>
 		</nav>
-		
-		
 	<!-- </section> -->
 
 	<!----------------- content ----------------->
 	<section class="rumah">
         <div class="bootstrap-iso">
-			@yield('kontainer')
-		    <!-- <div class="kontainer">
-                
-		    </div> -->
+		    <div class="kontainer">
+                @yield('kontainer')
+		    </div>
         </div>
 	</section>
 	<script src="../Js/skrip.js"></script>

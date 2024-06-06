@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('lokasi', length: 100);
             $table->string('kordinat', length: 100);
             $table->integer('port');
+            $table->integer('port_terpakai');
             $table->integer('sisa_port');
             $table->string('status');
             $table->string('distribusi');

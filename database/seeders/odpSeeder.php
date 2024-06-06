@@ -18,6 +18,7 @@ class odpSeeder extends Seeder
             'odc_id' => '1',
             'lokasi' => 'surabaya',
             'kordinat' => '-7.233031, 112.774501',
+            'port_terpakai' => '8',
             'port' => '8',
             'sisa_port' => '0',
             'status' => 'up',

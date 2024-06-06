@@ -16,11 +16,13 @@ return new class extends Migration
             $table->string('nama_odc', length: 50);
             $table->string('lokasi', length: 100);
             $table->string('kordinat', length: 100);
+            $table->integer('slot_terpakai');
+            $table->integer('port_terpakai');
             $table->integer('slot');
             $table->integer('sisa_slot');
             $table->integer('port');
             $table->integer('sisa_port');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

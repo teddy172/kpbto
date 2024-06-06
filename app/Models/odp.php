@@ -11,7 +11,7 @@ class odp extends Model
     use HasFactory;
     protected $table = 'ODP';
     protected $primaryKey = 'odp_id';
-    protected $fillable = ['nama_odp', 'odc_id', 'lokasi', 'kordinat', 'port', 'sisa_port', 'status', 'distribusi'];
+    protected $fillable = ['nama_odp', 'odc_id', 'lokasi', 'kordinat', 'port_terpakai', 'port', 'sisa_port', 'status', 'distribusi'];
 
     public function Odcs() : BelongsTo
     {

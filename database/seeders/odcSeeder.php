@@ -17,6 +17,8 @@ class odcSeeder extends Seeder
             'nama_odc' => 'ODC-KBL-FAB',
             'lokasi' => 'sidotopo wetan',
             'kordinat' => '-7.233031, 112.772501',
+            'slot_terpakai' => '6',
+            'port_terpakai' => '228',
             'slot' => '25',
             'sisa_slot' => '8',
             'port' => '300',

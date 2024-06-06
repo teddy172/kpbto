@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('absensi', function (Blueprint $table) {
+        Schema::create('tindakan', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->time('check_in')->nullable();
-            $table->time('check_out')->nullable();
-            $table->date('tanggal');
+            $table->unsignedBigInteger('assurance_id');
+            $table->string('kategori');
+            $table->string('sub_kategori');
+            $table->string('RCA');
+            $table->string('keterangan', length:200);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('assurance_id')->references('id')->on('assurance');
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('absensi');
+        Schema::dropIfExists('tindakan');
     }
 };

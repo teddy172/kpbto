@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(absensi::class, 'user_id');
     }
+
+    public function Assurance() : HasMany
+    {
+        return $this->hasMany(assurance::class, 'teknisi_id');
+    }
 }

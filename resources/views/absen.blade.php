@@ -23,13 +23,13 @@
         <div class="alert alert-success">
             {{ session('status') }}
         </div>
-    @endif
+        @endif
 
-    @if (session('error'))
+        @if (session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
         </div>
-    @endif
+        @endif
     <form action="{{ url('/presensi') }}" method="POST">
         @csrf
         <button type="submit" class="btn btn-primary">

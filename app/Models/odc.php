@@ -11,7 +11,7 @@ class odc extends Model
     use HasFactory;
     protected $table = 'ODC';
     protected $primaryKey = 'odc_id';
-    protected $fillable = ['nama_odc', 'lokasi', 'kordinat', 'slot', 'sisa_slot', 'port', 'sisa_port', 'status'];
+    protected $fillable = ['nama_odc', 'lokasi', 'kordinat', 'slot_terpakai', 'port_terpakai', 'slot', 'sisa_slot', 'port', 'sisa_port', 'status'];
 
     //nama function== nama model yang terhubung
     public function Odps() : HasMany

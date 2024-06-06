@@ -35,44 +35,52 @@ class odcController extends Controller
         Session::flash('nama_odc', $request->nama_odc);
         Session::flash('lokasi', $request->lokasi);
         Session::flash('kordinat', $request->kordinat);
-        Session::flash('slot', $request->slot);
-        Session::flash('sisa_slot', $request->sisa_slot);
-        Session::flash('port', $request->port);
+        Session::flash('port_terpakai', $request->port_terpakai);
         Session::flash('sisa_port', $request->sisa_port);
+        Session::flash('port', $request->port);
+        Session::flash('slot_terpakai', $request->slot_terpakai);
+        Session::flash('sisa_slot', $request->sisa_slot);
+        Session::flash('slot', $request->slot);
         Session::flash('status', $request->status);
-        
+
         $request->validate([
             'nama_odc'=>'required',
             'lokasi' => 'required',
             'kordinat' => 'required',
-            'slot' => 'required',
-            'sisa_slot' => 'required',
-            'port' => 'required',
+            'port_terpakai' => 'required',
             'sisa_port' => 'required',
+            'port' => 'required',
+            'slot_terpakai' => 'required',
+            'sisa_slot' => 'required',
+            'slot' => 'required',
             'status' => 'required',
         ],[
             'nama_odc.required'=>'ID ODC tidak boleh kosong',
             'lokasi.required'=>'Lokasi tidak boleh kosong',
             'kordinat.required'=>'Kordinat tidak boleh kosong',
-            'slot.required'=>'Slot tidak boleh kosong',
-            'sisa_slot.required'=>'Sisa slot tidak boleh kosong',
-            'port.required'=>'Port tidak boleh kosong',
+            'port_terpakai' => 'port terpakai tidak boleh kosong',
             'sisa_port.required'=>'Sisa port tidak boleh kosong',
-            'status.required'=>'Status tidak boleh kosong',
+            'port.required'=>'Port tidak boleh kosong',
+            'slot_terpakai' => 'slot terpakai tidak boleh kosong',
+            'sisa_slot.required'=>'Sisa slot tidak boleh kosong',
+            'slot.required'=>'Slot tidak boleh kosong',
+            'status' => 'tidak boleh kosong',
         ]);
         $data = [
-            'nama_odc' => $request->input('nama_odc'),
+            'nama_odc' => strtoupper($request->input('nama_odc')),
             'lokasi' => $request->input('lokasi'),
             'kordinat' => $request->input('kordinat'),
-            'slot' => $request->input('slot'),
-            'sisa_slot' => $request->input('sisa_slot'),
-            'port' => $request->input('port'),
+            'port_terpakai' => $request->input('port_terpakai'),
             'sisa_port' => $request->input('sisa_port'),
+            'port' => $request->input('port'),
+            'slot_terpakai' => $request->input('slot_terpakai'),
+            'sisa_slot' => $request->input('sisa_slot'),
+            'slot' => $request->input('slot'),
             'status' => $request->input('status'),
         ];
         odc::create($data);
         // return redirect('odc')->with(['success' => 'Data Berhasil Disimpan!']);;
-        return redirect('/odc');
+        return redirect('/odc')->with("status", "berhasil menambahkan!");
     }
 
     /**
@@ -157,7 +165,7 @@ class odcController extends Controller
     {
         $cari = $request->Cari;
         $odc = odc::where('nama_odc', 'like', "%".$cari."%")->orwhere('lokasi', 'like', "%".$cari."%")
-                ->paginate(10);
+               ->paginate(10);
         return view('odc')->with('data', $odc);
     }
 }
