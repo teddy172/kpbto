@@ -56,3 +56,20 @@ Route::get('/dbconn', function () {
 Route::get('/odp', function () {
     return view('odp');
 });
+
+Route::get('/assurance', function () {
+    return view('assurance1');
+});
+
+Route::get('/assurance2', function () {
+    return view('assurance2');
+});
+
+Route::get('/assurance3', function () {
+    return view('assurance3');
+});
+
+Route::get('/tech', function () {
+    return view('techclosed');
+});
+
