@@ -53,7 +53,7 @@
                         <h1 class="home__title">Welcome to My Indihome Technicians </h1>
                         <p class="home__description">Enhance your workflow with our advanced tools. Manage schedules, access tasks, and report completions more efficiently.</p>
 
-                        <a href="#" class="button">Get Started</a>
+                        <a href="#about" class="button">Get Started</a>
                     </div>   
                     <div class="home__image">
                         <img src="../image/bto2.jpg" alt="P">
