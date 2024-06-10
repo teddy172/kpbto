@@ -18,6 +18,10 @@ use App\Http\Middleware\mulaiSesi;
 //     return view('welcome');
 // });
 Route::get('/', function () {
+    return view('landingpage');
+});
+
+Route::get('/login', function () {
     return view('login');
 });
 
@@ -72,4 +76,3 @@ Route::get('/assurance3', function () {
 Route::get('/tech', function () {
     return view('techclosed');
 });
-

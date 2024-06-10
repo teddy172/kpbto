@@ -170,21 +170,21 @@
             return `${hours}:${minutes}`;
         }
 
-        // Function to mark the button as completed
+        //mark the button as completed
         function markAsCompleted(button) {
             button.textContent = "COMPLETED";
             button.classList.add("completed-btn");
             button.disabled = true;
         }
 
-        // Event listener for Berangkat button
+        //Berangkat button
         document.getElementById("berangkatButton").addEventListener("click", function() {
             const time = getCurrentTime();
             console.log("Berangkat time:", time);
             markAsCompleted(this);
         });
 
-        // Event listener for Tiba button
+        //Tiba button
         document.getElementById("tibaButton").addEventListener("click", function() {
             const time = getCurrentTime();
             console.log("Tiba time:", time);
@@ -228,7 +228,7 @@
             modal.style.display = "none";
         }
 
-        // When the user clicks the save button, save the changes and close the modal
+        //save the changes and close the modal
         saveChangesButton.onclick = function() {
             let selectedTime = `${hoursSelect.value}:${minutesSelect.value}`;
             console.log("Selected Time:", selectedTime);
@@ -240,7 +240,7 @@
             btn.disabled = true;
         }
 
-        // When the user clicks anywhere outside of the modal, close it
+        //click anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
