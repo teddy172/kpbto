@@ -18,10 +18,11 @@ return new class extends Migration
             $table->string('alamat', length: 50);
             $table->string('no_telepon', length: 50);
             $table->string('no_internet', length: 50);
+            $table->string('no_incident', length: 50);
             $table->string('keluhan', length: 100);
-            $table->time('teknisi_berangkat');
-            $table->time('teknisi_tiba');
-            $table->time('waktu_estimasi');
+            $table->time('teknisi_berangkat')->nullable();
+            $table->time('teknisi_tiba')->nullable();
+            $table->time('waktu_estimasi')->nullable();
             $table->string('status');
             $table->timestamps();
 

@@ -36,7 +36,7 @@
 						</li>
 					<ul class="daftar-link">
 						<li class="nav-link">
-							<a href="index">
+							<a href="/admin">
 								<i class='bx bxs-home-circle icon'></i>
 								<span class="teks nav-teks">Dashboard</span>
 							</a>
@@ -86,7 +86,7 @@
 					</ul>
                     <ul class="daftar-link">
 						<li class="nav-link">
-							<a href="{{ url('/logout') }}">
+							<a href="{{ url('/admin/login') }}">
                                 <i class='bx bx-power-off icon'></i>
 								<span class="teks nav-teks">Logout</span>
 							</a>

@@ -12,4 +12,7 @@ class pageController extends Controller
         return view("index");
     }
    
+    function adminIndex(){
+        return view("admin/adminHome");
+    }
 }

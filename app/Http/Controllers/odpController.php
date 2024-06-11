@@ -16,7 +16,7 @@ class odpController extends Controller
     public function index()
     {
         $odp = odp::orderBY('odp_id', 'asc')->paginate(10); //membatasi data yang diambil dengan paginate
-        return view ('odp')->with('data', $odp); //mengembalikan tampilan ke odc bersama variabel data
+        return view ('admin/odp')->with('data', $odp); //mengembalikan tampilan ke odc bersama variabel data
     }
 
     /**
@@ -25,7 +25,7 @@ class odpController extends Controller
     public function create()
     {   
         $namaOdc = odc::all();
-        return view ('odpTambah')->with('namaOdc', $namaOdc);
+        return view ('admin/odpTambah')->with('namaOdc', $namaOdc);
     }
 
     /**
@@ -82,7 +82,7 @@ class odpController extends Controller
     public function show($odp_id)
     {
         $odp = odp::where('odp_id', $odp_id)->first();
-        return view('odpDetail')->with('odp', $odp);
+        return view('admin/odpDetail')->with('odp', $odp);
     }
 
     /**
@@ -91,7 +91,7 @@ class odpController extends Controller
     public function edit(string $id)
     {
         $odp = odp::where('odp_id', $id)->first();
-        return view('odpEdit')->with('data', $odp);
+        return view('admin/odpEdit')->with('data', $odp);
     }
 
     /**
@@ -123,6 +123,6 @@ class odpController extends Controller
         $cari = $request->Cari;
         $odp = odp::where('nama_odp', 'like', "%".$cari."%")->orwhere('lokasi', 'like', "%".$cari."%")
                 ->paginate(10);
-        return view('odp')->with('data', $odp);
+        return view('admin/odp')->with('data', $odp);
     }
 }

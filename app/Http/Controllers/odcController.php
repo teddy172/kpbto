@@ -16,7 +16,7 @@ class odcController extends Controller
     public function index()//function table odc
     {
         $odc = odc::orderBY('odc_id', 'asc')->paginate(10); //membatasi data yang diambil dengan paginate
-        return view ('odc')->with('data', $odc); //mengembalikan tampilan ke odc bersama variabel data
+        return view ('admin/odc')->with('data', $odc); //mengembalikan tampilan ke odc bersama variabel data
     }
 
     /**
@@ -24,7 +24,7 @@ class odcController extends Controller
      */
     public function create()
     {   
-        return view ('odcTambah');
+        return view ('admin/odcTambah');
     }
     
     /**
@@ -99,7 +99,7 @@ class odcController extends Controller
                          'odp.status as status_odp', 'odp.distribusi as distribusi_odp')
                 ->paginate(15);
         $odc = odc::where('odc_id', $odc_id)->first();
-        return view('odcDetail', ['data' => $data, 'odc' => $odc]);
+        return view('admin/odcDetail', ['data' => $data, 'odc' => $odc]);
         // return "<h1>nama odc dengan id $odc_id</h1>";
     }
 
@@ -109,7 +109,7 @@ class odcController extends Controller
     public function edit(string $id)
     {
         $odc = odc::where('odc_id', $id)->first();
-        return view('odcEdit')->with('data', $odc);
+        return view('admin/odcEdit')->with('data', $odc);
     }
 
     /**
@@ -166,6 +166,6 @@ class odcController extends Controller
         $cari = $request->Cari;
         $odc = odc::where('nama_odc', 'like', "%".$cari."%")->orwhere('lokasi', 'like', "%".$cari."%")
                ->paginate(10);
-        return view('odc')->with('data', $odc);
+        return view('admin/odc')->with('data', $odc);
     }
 }

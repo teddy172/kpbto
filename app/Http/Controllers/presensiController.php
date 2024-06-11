@@ -14,7 +14,7 @@ class presensiController extends Controller
         $today = date('Y-m-d');
 
         $attendance = absensi::where('user_id', $user->id)->where('tanggal', $today)->first();
-        $history = absensi::orderBy('tanggal', 'desc')->limit(10)->get();
+        $history = absensi::orderBy('tanggal', 'desc')->limit(3)->get();
 
         $hasCheckedIn = $attendance ? true : false;
         $hasCheckedOut = $attendance && $attendance->check_out ? true : false;

@@ -79,7 +79,7 @@
                     <div class="card text"> FULLFILMENT </div>
                 </a>
             </div>
-            <div class="card presensi"><a href="#" style="text-decoration: none">
+            <div class="card presensi"><a href="{{ url('/assurance/'.Session('profilTeknisi')->id) }}" style="text-decoration: none">
                     <div class="icon-bg" style="background: #32C5F8"><img class="menu-icon"
                             src="../image/assurance-icon.png"></div>
                     <div class="card text"> ASSURANCE </div>
