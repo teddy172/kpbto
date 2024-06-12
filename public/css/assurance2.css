@@ -1,0 +1,219 @@
+@font-face {
+    font-family: Inter-Regular;
+    src: url(../font/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inter-Medium;
+    src: url(../font/Inter-Medium.ttf);
+}
+
+@font-face {
+    font-family: Inter-Semibold;
+    src: url(../font/Inter-SemiBold.ttf);
+}
+
+body {
+    background-image: url("../image/bg_web.png");
+}
+
+.nav-container {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.nav-bar {
+    background: #F04636;
+    width: 95%;
+    height: 80px;
+    margin: 0px 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.column {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.column img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+.column-one {
+    flex-grow: 1;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Inter-Semibold;
+}
+
+.circle-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: #00ab66;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+.percentage {
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: Inter-Semibold;
+}
+
+.tindakan-container {
+    background: #FEFEFE;
+    height: auto;
+    width: 500px; 
+    border-radius: 30px;
+    border-style: groove;
+    border-width: 1px;
+    border-color: #B1B1AF;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: Inter-Regular;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.row-one {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    
+}
+.check {
+    display: flex;
+    align-items: center;
+}
+
+.check img {
+    width: 30px; /* Ubah ukuran gambar sesuai kebutuhan */
+    height: 30px;
+    margin-right: 10px; /* Jarak antara gambar dan teks */
+}
+
+.check label {
+    margin-left: 50px; /* Jarak antara teks dan tombol */
+    font-family: Inter-Semibold;
+}
+
+.button-update {
+    margin-left: auto;
+    margin-right: 50px;
+    flex: 0 0 auto;
+}
+
+.button-update button {
+    background-color: #b32700;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-family: Inter-Semibold;
+}
+
+.button-update button:hover {
+    background-color: #b32700;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header,
+.modal-footer {
+    padding: 10px;
+    text-align: center;
+}
+.modal-body {
+    padding: 20px;
+    text-align: center;
+}
+.time-picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time-picker select {
+    font-size: 18px;
+    margin: 0 10px;
+    padding: 5px;
+}
+.completed-btn {
+    background-color: grey;
+    color: white;
+    cursor: default;
+}
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .nav-bar .column-one {
+        font-size: 14px;
+    }
+
+    .button-update button {
+        padding: 8px 16px;
+    }
+}

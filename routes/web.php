@@ -29,6 +29,13 @@ use Illuminate\Auth\Middleware\adminAuth;
 |
 */
 
+Route::get('/testt', function () {
+    return view('landingpage');
+});
+
+Route::get('/loginsss', function () {
+    return view('login');
+});
 
 //admin route
 Route::get('/admin', [pageController::class, 'adminIndex'])->middleware('adminLoginPass');
