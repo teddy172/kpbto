@@ -110,7 +110,8 @@ class cariOdcController extends Controller
     }
     public function search(Request $request){
         $cari = $request->input('search');
-        $odc = odc::where('nama_odc', 'like', "%".$cari."%")->orwhere('lokasi', 'like', "%".$cari."%")->first();
+        $odc = odc::where('status', 'up')->where('nama_odc', 'like', "%".$cari."%")->orwhere('lokasi', 'like', "%".$cari."%")
+                ->first();
         return view('cariodc')->with('data', $odc);
     }
 }

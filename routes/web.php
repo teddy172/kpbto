@@ -16,7 +16,7 @@ use App\Http\Controllers\{
     tindakanController
 };
 use Illuminate\Auth\Middleware\Authenticate;
-
+use Illuminate\Auth\Middleware\adminAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,12 +31,14 @@ use Illuminate\Auth\Middleware\Authenticate;
 
 
 //admin route
-Route::get('/admin', [pageController::class, 'adminIndex']);
+Route::get('/admin', [pageController::class, 'adminIndex'])->middleware('adminLoginPass');
 Route::get('/dbconn', function(){
     return view('dbconn');
 });
 
 Route::get('/admin/login', [adminSessionController::class, 'index']);//halaman login
+Route::get('/admin/logout', [adminSessionController::class, 'logout']);//logout
+Route::post('/admin/login/auth', [adminSessionController::class, 'login']);//login post
 
 Route::get('/odc/search', [odcController::class, 'CARI']);//search odc
 Route::get('/odp/search', [odpController::class, 'CARI']);//search odp

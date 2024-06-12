@@ -62,7 +62,7 @@
 					</ul>
 					<ul class="daftar-link">
 						<li class="nav-link">
-							<a href="odp">
+							<a href="/odp">
 								<i class='bx bx-up-arrow icon'></i>
 								<span class="teks nav-teks">ODP</span>
 							</a>
@@ -70,7 +70,7 @@
 					</ul>
                     <ul class="daftar-link">
 						<li class="nav-link">
-							<a href="odc">
+							<a href="/odc">
                                 <i class='bx bx-checkbox-square icon' ></i>
 								<span class="teks nav-teks">ODC</span>
 							</a>
@@ -86,7 +86,7 @@
 					</ul>
                     <ul class="daftar-link">
 						<li class="nav-link">
-							<a href="{{ url('/admin/login') }}">
+							<a href="{{ url('/admin/logout') }}">
                                 <i class='bx bx-power-off icon'></i>
 								<span class="teks nav-teks">Logout</span>
 							</a>

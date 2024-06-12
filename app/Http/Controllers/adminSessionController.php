@@ -14,25 +14,25 @@ class adminSessionController extends Controller
     }
 
     public function login(Request $request){
-        Session::flash('admin_NIP', $request->admin_NIP);
+        Session::flash('admin_NIP', $request->input('NIPadmin'));
 
         $request->validate([
-            'admin_NIP'=>'required',
-            'admin_password'=>'required'
+            'NIPadmin'=>'required',
+            'passwordadmin'=>'required'
         ],[
-            'admin_NIP.required'=>'NIP harus diisi',
-            'admin_password.required'=>'password harus diisi' 
+            'NIPadmin.required'=>'NIP harus diisi',
+            'passwordadmin.required'=>'password harus diisi' 
         ]);
 
         $login = [
-            'admin_NIP'=> $request->input('NIP'),
-            'admin_password'=> $request->input('password')
+            'admin_NIP'=> $request->input('NIPadmin'),
+            'password'=> $request->input('passwordadmin')
         ];
 
         $profil = admin::where('admin_NIP', $login['admin_NIP'])->first();
         
    
-        if(Auth::attempt($login)){
+        if (Auth::guard('admin')->attempt($login)) {
             Session::put('profilAdmin', $profil);
             return redirect('/admin');
         }else{
@@ -42,6 +42,6 @@ class adminSessionController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect('/admin/login')->with('berhasil logout');
+        return redirect('/admin/login')->with('status', 'berhasil logout');
     }
 }

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('admin_name');
             $table->string('admin_email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('admin_password');
+            $table->string('password');
             $table->string('admin_NIP');
             $table->string('nomer_telepon_admin');
             $table->rememberToken();

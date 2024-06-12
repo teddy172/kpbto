@@ -11,10 +11,10 @@
     <div class="kotak-masuk">
 	@include('/layout/pesan')
     	<h2>Login</h2>
-    	<form action="{{url('/login/auth')}}" method="POST">
+    	<form action="{{url('/admin/login/auth')}}" method="POST">
 			@csrf
-    		<input type="text" name="NIP" placeholder="NIP" class="kontrol-masukan" value="{{ Session::get('NIP') }}">
-    		<input type="password" name="password" placeholder="Password" class="kontrol-masukan">
+    		<input type="text" name="NIPadmin" placeholder="NIP" class="kontrol-masukan" value="{{ Session::get('admin_NIP') }}">
+    		<input type="password" name="passwordadmin" placeholder="Password" class="kontrol-masukan">
     		<input type="submit" name="submit" value="Login" class="tombol-masukan">
     	</form>
     	
