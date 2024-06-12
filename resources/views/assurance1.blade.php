@@ -24,7 +24,7 @@
         <div class="nav-bar">
             <div class="row">
                 <div class="column">
-                    <a href="/index"><img src="../image/home.png" alt=""></a>
+                    <a href="/"><img src="../image/home.png" alt=""></a>
                 </div>
                 <div class="column-one" id="text" style="color: #FFFFFF">
                     Assurance
@@ -36,46 +36,18 @@
     </div>
 
     <div class="data-container">
-        <a href="/assurance2" class="data-box">
+        @foreach ($data as $item) 
+        <a href="{{ url('/keberangkatan/'.$item->id) }}" class="data-box">
             <div>
-                <h3>Nama Pelanggan</h3>
-                <p>Alamat : xxxxxxxxxxxxxxxxxxxxxx</p>
-                <p>No. HP : 12312321321321321</p>
-                <p>No. Incident : 12312421</p>
-                <p>No. Internet : 123213</p>
-                <p>Keluhan : Matot</p>
+                <h3>{{$item->nama_pelanggan}}</h3>
+                <p>Alamat       : {{$item->alamat}}</p>
+                <p>No. HP       : {{$item->no_telepon}}</p>
+                <p>No. Incident : {{$item->no_incident}}</p>
+                <p>No. Internet : {{$item->no_internet}}</p>
+                <p>Keluhan      : {{$item->keluhan}}</p>
             </div>
         </a>
-        <a href="/assurance2" class="data-box">
-            <div>
-                <h3>Nama Pelanggan</h3>
-                <p>Alamat : xxxxxxxxxxxxxxxxxxxxxx</p>
-                <p>No. HP : 12312321321321321</p>
-                <p>No. Incident : 12312421</p>
-                <p>No. Internet : 123213</p>
-                <p>Keluhan : Matot</p>
-            </div>
-        </a>
-        <a href="/assurance2" class="data-box">
-            <div>
-                <h3>Nama Pelanggan</h3>
-                <p>Alamat : xxxxxxxxxxxxxxxxxxxxxx</p>
-                <p>No. HP : 12312321321321321</p>
-                <p>No. Incident : 12312421</p>
-                <p>No. Internet : 123213</p>
-                <p>Keluhan : Matot</p>
-            </div>
-        </a>
-        <a href="/assurance2" class="data-box">
-            <div>
-                <h3>Nama Pelanggan</h3>
-                <p>Alamat : xxxxxxxxxxxxxxxxxxxxxx</p>
-                <p>No. HP : 12312321321321321</p>
-                <p>No. Incident : 12312421</p>
-                <p>No. Internet : 123213</p>
-                <p>Keluhan : Matot</p>
-            </div>
-        </a>
+        @endforeach
     </div>
 
 

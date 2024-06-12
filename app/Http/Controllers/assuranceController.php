@@ -10,13 +10,13 @@ class assuranceController extends Controller
 {
     public function index(string $id){
         $data = assurance::where('teknisi_id', $id)->where('status', 'open')->get();
-        return view('assurance')->with('data', $data);
+        return view('assurance1')->with('data', $data);
     }
 
     public function edit(string $id){
         $data = assurance::find($id);
         $tabel = assurance::where('teknisi_id', $data->teknisi_id)->where('status', 'open')->get();
-        return view ('keberangkatan', ['time' => $data, 'tabel' => $tabel]);
+        return view ('assurance2', ['time' => $data, 'tabel' => $tabel]);
     }
 
     public function update(Request $request, string $id){
