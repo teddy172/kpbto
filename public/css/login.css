@@ -17,50 +17,47 @@ body {
     background-image: url("../image/bg_web.png");
 }
 
-.screen{
-    width: 100vw;
-    height: 100vh;
+.row {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-container{
-    width: 42vw;
-    height: 56vh;
-    background: #F8F9FA;
-    border-radius: 20px;
-    border-width: 1px;
-    border: #B1B1AF;
-    border-style: solid;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.title {
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     height: 20%;
-    /* background-color: aqua; */
-    justify-content: center;
-    display: flex;
-    align-content: flex-start;
-    padding-top: 20px;
-    padding-bottom: 30px;
     align-items: center;
+    justify-content: center;
 }
 
-.form-detail{
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 20px;
     width: 100%;
-    height: 80%;
-    /* background-color: blueviolet; */
-    padding-top: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    height: 100%;
+}
+
+.data-container {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 680px;
+    margin: 100px 25px;
+}
+
+.data-box {
+    background: #FEFEFE;
+    height: 100%;
+    width: 900px;
+    border-radius: 20px;
+    border-radius: 20px;
+    padding: 20px 50px 20px 50px;
+    border-style: groove;
+    border-width: 1px;
+    border-color: #B1B1AF;
 }
 
 #text{

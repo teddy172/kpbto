@@ -35,12 +35,14 @@
         </div>
     </div>
 
+    {{-- Search bar --}}
     <div class="search-bar-container">
         <div class="input-group mb-3" id="search-bar">
 
             <form role="search" Action="{{ url('/ODC/cari') }}" class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Masukkan Kode ODC" aria-describedby="button-addon2"
-                    style="height: 50px;border-radius: 20p 0px 0px 20px" name="search">
+                <input type="text" class="form-control" placeholder="Masukkan Kode ODC"
+                    aria-describedby="button-addon2" style="height: 50px;border-radius: 20p 0px 0px 20px"
+                    name="search">
                 <button class="btn btn-light" type="submit" id="button-addon2"
                     style="width: 50px;height: 50px;justify-content: center;align-items: center;border-width: 1px;border-style: groove;border-color: #B1B1AF"><img
                         src="../image/search.png" style="width: 30px;height: 30px;padding-right:5px;"></button>
@@ -50,9 +52,9 @@
     </div>
 
     @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
     @endif
 
     <div class="data-container">
@@ -138,7 +140,7 @@
             <div class="col"></div>
             <div class="col"></div>
             <div class="col">
-                <a href=" {{url('/ODC/create')}} ">
+                <a href=" {{ url('/ODC/create') }} ">
                     <button type="button" class="btn btn-lg" id="text"
                         style="background: #D9D9D9">+TAMBAH</button>
                 </a>
