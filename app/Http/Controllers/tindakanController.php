@@ -11,11 +11,12 @@ use App\Models\{
 class tindakanController extends Controller
 {
     public function index(string $id){
-        $data = tindakan::where('assurance_id', $id)->first();
-        return view('tindakan')->with('data', $data);
+        $data = assurance::leftJoin('tindakan', 'assurance.id', '=', 'tindakan.assurance_id')
+                ->find($id);
+        return view('assurance3', ['data' => $data, 'idasurance' => $id]);
     }
 
-    public function create(Request $request, string $id){
+    public function create(Request $request){
         $request->validate([
             'kategori' => 'required',
             'sub_kategori' => 'required',
@@ -29,13 +30,19 @@ class tindakanController extends Controller
         ]);
 
         $data = [
-            'assurance_id' => $id,
+            'assurance_id' => $request->input('assurance_id'),
             'kategori' => $request->input('kategori'),
-            'sub_kategori' =>$request->input('sub kategori'),
-            'RCA' =>$request->input('rca'),
+            'sub_kategori' =>$request->input('sub_kategori'),
+            'RCA' =>$request->input('RCA'),
             'keterangan' =>$request->input('keterangan'),
         ];
         tindakan::create($data);
+        // Mengubah status assurance menjadi closed
+        $assurance = assurance::find($request->input('assurance_id'));;
+        if ($assurance) {
+            $assurance->status = 'closed';
+            $assurance->save();
+        }
         return redirect()->back()->with("status", "berhasil menambahkan!");
     }
 }

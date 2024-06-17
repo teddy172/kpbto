@@ -32,10 +32,15 @@ class assuranceController extends Controller
             if (is_null($assurance->teknisi_tiba)){
             $assurance->teknisi_tiba = $waktuWib;
             }
-
-        }else if($request->has('tech_closed')) {
+        
+        }else if($request->has('estimasi')) {
+            if (is_null($assurance->estimasi)){
+            $assurance->waktu_estimasi = $request->input('estimasi');
+            }
+            
+        }else if($request->has('tech_closed')){
             if ($assurance->status !== 'closed'){
-            $assurance->status = 'closed';
+            $assurance->status = $request->input('tech_closed');
             }
         }
 

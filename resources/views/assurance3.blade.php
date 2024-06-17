@@ -24,8 +24,8 @@
         <div class="nav-bar">
             <div class="row">
                 <div class="column">
-                    <a href="/assurance2"><img src="../image/arrowback.png" alt="back"></a>
-                    <a href="/index"><img src="../image/home.png" alt="home"></a>
+                    <a href="{{ url('/keberangkatan/'.$idasurance) }}"><img src="../image/arrowback.png" alt="back"></a>
+                    <a href="/"><img src="../image/home.png" alt="home"></a>
                 </div>
                 <div class="column-one" id="text" style="color: #FFFFFF">
                     Update Tindakan
@@ -35,53 +35,61 @@
             </div>
         </div>
     </div>
+    @include('/layout/pesan')
     <div class="data-container">
+        <form action="{{ url('/tindakan/tambah') }}" method="post" id="mainForm">
+        <input type="hidden" name="assurance_id" value="{{ $idasurance }}">
+        @csrf
         <div class="data-box">
             <div class="row-data" id="text-data-tittle">
                 KATEGORI <br>
                 <div class="input-group">
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect01" name="kategori">
                         <option selected>Choose...</option>
-                        <option value="1">IKR/IKG</option>
-                        <option value="2">gtw</option>
-                        <option value="3">iyakali</option>
+                        <option value="IKR/IKG">IKR/IKG</option>
+                        <option value="CPE">CPE</option>
+                        <option value="DROP CORE">DROP CORE</option>
+                        <option value="NON TEKNIS">NON TEKNIS</option>
+                        <option value="ODC">ODC</option>
+                        <option value="ODP">ODP</option>
+                        <option value="ONT">ONT</option>
+                        <option value="STB">STB</option>
                     </select>
                 </div>
             </div>
             <div class="row-data" id="text-data-tittle">
                 SUB KATEGORI <br>
                 <div class="input-group">
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect01" name="sub_kategori">
                         <option selected>Choose...</option>
-                        <option value="1">a</option>
-                        <option value="2">b</option>
-                        <option value="3">c</option>
+                        <option value="CRIMPING ULANG KABEL LAN">CRIMPING ULANG KABEL LAN</option>
+                        <option value="PERBAIKAN IKR/IKG">PERBAIKAN IKR/IKG</option>
                     </select>
                 </div>
             </div>
             <div class="row-data" id="text-data-tittle">
                 RCA <br>
                 <div class="input-group">
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="inputGroupSelect01" name="RCA">
                         <option selected>Choose...</option>
-                        <option value="1">a</option>
-                        <option value="2">b</option>
-                        <option value="3">c</option>
+                        <option value="Pembersihan Konektor dan Adapter">Pembersihan Konektor dan Adapter</option>
+                        <option value="Ganti Konektor dan Adapter">Ganti Konektor dan Adapter</option>
                     </select>
                 </div>
             </div>
             <div class="row-data" id="text-data-tittle">
                 KETERANGAN <br>
-                <input class="form-control" type="text" aria-label="default input example">
+                <input class="form-control" type="text" aria-label="default input example" name="keterangan">
             </div>
             <div class="row-two" id="btn">
                 <div class="column-three" id="text">
-                    <button type="button" class="btn-submit" id="text" style="color: #FFFFFF;" onclick="location.href='/assurance2'">
+                    <button type="submit" class="btn-submit" id="text" style="color: #FFFFFF;">
                         SUBMIT
                     </button>
                 </div>
             </div>
         </div>
+        </form>
     </div>
 </body>
 

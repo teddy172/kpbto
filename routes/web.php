@@ -80,3 +80,4 @@ Route::get('/keberangkatan/{assurance}', [assuranceController::class, 'edit']);/
 Route::put('/assurance/update/{assurance}', [assuranceController::class, 'update']);//update waktu
 
 Route::get('/tindakan/{tindakan}', [tindakanController::class, 'index']);//halaman tindakan assurance
+Route::post('/tindakan/tambah', [tindakanController::class, 'create']);//tambah tindakan
