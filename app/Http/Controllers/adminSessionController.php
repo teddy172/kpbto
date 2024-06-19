@@ -41,7 +41,7 @@ class adminSessionController extends Controller
     }
 
     public function logout(){
-        Auth::logout();
+        Auth::guard('admin')->logout();
         return redirect('/admin/login')->with('status', 'berhasil logout');
     }
 }

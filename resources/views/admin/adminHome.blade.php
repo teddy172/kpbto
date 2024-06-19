@@ -35,10 +35,10 @@
                         My Account
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href=""
+                        <li><a class="dropdown-item" href="{{ url('/profilAdmin/'.Session('profilAdmin')->id .'/edit') }}"
                                 style="height: 50px;width: 230px;font-size: 20px">Account Setting</a>
                         </li>
-                        <li><a class="dropdown-item" href="="
+                        <li><a class="dropdown-item" href="{{ url('/admin/logout') }}"
                                 style="height: 50px;width: 230px;font-size: 20px">Sign
                                 Out</a></li>
                     </ul>
@@ -52,7 +52,7 @@
         <div class="menu-box">
             <div class="row">
                 <div class="column">
-                    <div class="card presensi"><a href="/ODC" style="text-decoration: none">
+                    <div class="card presensi"><a href="/odc" style="text-decoration: none">
                             <div class="icon-bg" style="background: #D40033"><img class="menu-icon"
                                     src="../image/odc-icon.png">
                             </div>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="card presensi"><a href="/ODP" style="text-decoration: none">
+                    <div class="card presensi"><a href="/odp" style="text-decoration: none">
                             <div class="icon-bg" style="background: #FB8C00"><img class="menu-icon"
                                     src="../image/odp-icon.png"></div>
                             <div class="card text"> ODP </div>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="card presensi"><a href="" style="text-decoration: none">
+                    <div class="card presensi"><a href="/adminAssurance" style="text-decoration: none">
                             <div class="icon-bg" style="background: #32C5F8"><img class="menu-icon"
                                     src="../image/assurance-icon.png"></div>
                             <div class="card text"> ASSURANCE </div>

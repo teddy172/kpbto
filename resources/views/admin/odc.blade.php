@@ -25,7 +25,7 @@
         <div class="nav-bar">
             <div class="row">
                 <div class="column" style= "align-items: start;">
-                    <a href="/"><img src="../image/home.png" style="color:#FFFFFF" alt=""></a>
+                    <a href="/admin"><img src="../image/home.png" style="color:#FFFFFF" alt=""></a>
                 </div>
                 <div class="column" id="text" style="color: #FFFFFF">
                     ODC
@@ -39,16 +39,20 @@
     {{-- Search bar --}}
     <div class="search-bar-container">
         <div class="input-group mb-3" id="search-bar">
-            <form role="search" Action="{{ url('/ODC/cari') }}" class="input-group mb-3">
+            <form role="search" Action="{{url('/odc/search ')}}" class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Masukkan Kode ODC"
                     aria-describedby="button-addon2" style="height: 50px;border-radius: 20p 0px 0px 20px"
-                    name="search">
+                    name="Cari">
                 <button class="btn btn-light" type="submit" id="button-addon2"
                     style="width: 50px;height: 50px;justify-content: center;align-items: center;border-width: 1px;border-style: groove;border-color: #B1B1AF"><img
                         src="../image/search.png" style="width: 30px;height: 30px;padding-right:5px;"></button>
             </form>
         </div>
     </div>
+
+    <div class="row">
+			@include('/layout/pesan')
+	</div>   
 
     {{-- Body --}}
     <div class="table-container" id="text">
@@ -65,183 +69,49 @@
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
+                    @foreach ($data as $item)
+                    <tr onclick="window.location.href='{{ url('/odc/'.$item->odc_id) }}'">
+                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td>{{ $item->nama_odc }}</td>
+                        <td>{{ $item->lokasi }}</td>
+                        <td>{{ $item->status }}</td>
+                        <td> 
+                                <a href="{{ url('/odc/'.$item->odc_id.'/edit') }}"><button type="button"
+                                        class="btn btn-success">Edit</button></a>
+                                <span>
+                                    <form class="d-inline" action="{{ url('/odc/'.$item->odc_id) }}" method='post'>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" >Delete</button>
+                                    </form>
+                                </span>   
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href="">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-
-
+                    @endforeach
                 </tbody>
             </table>
             {{-- Pagination --}}
+            {{ $data->links() }}
+            
             <div class="pagination-container">
                 <div class="row">
                     <div class="column" style="align-items: start">
-                        <a href="">
+                        <a href="{{url('/odc/create')}}">
                             <button style="background: #00AB66;border: none" type="button"
                                 class="btn btn-primary btn-lg">Tambah</button>
                         </a>
-                    </div>
-                    <div class="column"></div>
-                    <div class="column" style="align-items: end;margin-top: 5px">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
+<style>
+    .table-group-divider tr {
+        cursor: pointer;
+    }
+    .table-group-divider a {
+        text-decoration: none;
+    }
+</style>
 </html>

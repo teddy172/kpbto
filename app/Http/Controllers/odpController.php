@@ -47,10 +47,11 @@ class odpController extends Controller
             'odc_id' => 'required',
             'lokasi' => 'required',
             'kordinat' => 'required',
-            'port' => 'required',
-            'sisa_port' => 'required',
+            'port' => 'required|integer',
+            'sisa_port' => 'required|integer',
             'status' => 'required',
             'distribusi' => 'required',
+            'port_terpakai' => 'required|integer',
         ],[
             'nama_odp.required'=>'ID ODP tidak boleh kosong',
             'odc_id.required'=>'ID ODC tidak boleh kosong',
@@ -59,7 +60,11 @@ class odpController extends Controller
             'port.required'=>'Port tidak boleh kosong',
             'sisa_port.required'=>'Sisa port tidak boleh kosong',
             'status.required'=>'Status tidak boleh kosong',
-            'distribusi.required' => 'distribusi tidak boleh kosong'
+            'distribusi.required' => 'distribusi tidak boleh kosong',
+            'port_terpakai' => 'jumlah port terpakai tidak boleh kosong',
+            'port.integer' => 'Port harus berupa angka!',
+            'sisa_port.integer' => 'Sisa port harus berupa angka!',
+            'port_terpakai.integer' => 'Port terpakai harus berupa angka!',
         ]);
         $data = [
             'nama_odp' => $request->input('nama_odp'),
@@ -70,10 +75,11 @@ class odpController extends Controller
             'sisa_port' => $request->input('sisa_port'),
             'status' => $request->input('status'),
             'distribusi' => $request->input('distribusi'),
+            'port_terpakai' => $request->input('port_terpakai'),
         ];
         odp::create($data);
         // return redirect('odc')->with(['success' => 'Data Berhasil Disimpan!']);;
-        return redirect('/odp');
+        return redirect('/odp')->with("pesan", "berhasil menambahkan!");
     }
 
     /**
@@ -99,16 +105,35 @@ class odpController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'nama_odp' => 'required',
+            'lokasi' => 'required',
+            'kordinat' => 'required',
+            'port' => 'required',
+            'sisa_port' => 'required',
+            'port_terpakai' => 'required',
+            'distribusi' => 'required',
+            'status' => 'required',
+        ],[
+            'nama_odp.required' => 'KODE ODP tidak boleh kosong',
+            'lokasi.required' => 'lokasi tidak boleh kosong',
+            'kordinat.required' => 'kordinat tidak boleh kosong',
+            'port.required' => 'port tidak boleh kosong',
+            'distribusi.required' => 'nomer distribusi tidak boleh kosong',
+            'status.required' => 'status tidak boleh kosong',
+        ]);
         $data = [
             'nama_odp' => $request->input('nama_odp'),
             'lokasi' => $request->input('lokasi'),
             'kordinat' => $request->input('kordinat'),
             'port' => $request->input('port'),
             'sisa_port' => $request->input('sisa_port'),
+            'port_terpakai' => $request->input('port_terpakai'),
+            'distribusi' => $request->input('distribusi'),
             'status' => $request->input('status'),
         ];
         odp::where('odp_id', $id)->update($data);
-        return redirect('/odp');
+        return redirect('/odp')->with("pesan", "berhasil merubah!");
     }
 
     /**
@@ -116,7 +141,8 @@ class odpController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        odp::where('odp_id', $id)->delete();
+        return redirect('/odp')->with("pesan", "berhasil menghapus!");
     }
     public function CARI(Request $request)
     {

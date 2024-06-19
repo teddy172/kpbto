@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admint Account</title>
-    <link rel="stylesheet" type="text/css" href="../css/adminAccount.css">
-    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-iso.css">
+    <link rel="stylesheet" type="text/css" href="../../css/adminAccount.css">
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap-iso.css">
 </head>
 
 <body>
@@ -35,6 +35,10 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+			@include('/layout/pesan')
+	</div>   
 
     <div class="profile-container">
         <img src="../image/profile-icon.png" alt=""><a href=""></a>
@@ -67,32 +71,32 @@
                 {{-- Profile Page --}}
                 <div class="tab tab-pane fade show active" id="nav-profile" role="tabpanel"
                     aria-labelledby="nav-profile-tab">
-                    <form action="" method="post">
+                    <form action="{{ url('/profilAdmin/'.$pass->id) }}" method="post">
                         @csrf
                         @method('put')
                         <div class="row text">
                             <div class="column">
                                 <label for="NAMA" class="form-label">NAMA</label>
                                 <input type="text" class="form-control" id="NAMA" aria-describedby="emailHelp"
-                                    style="height: 50px" value="" name="name">
+                                    style="height: 50px" value="{{ $pass->admin_name }}" name="admin_name">
 
                             </div>
                             <div class="column">
                                 <label for="NO-TELEPON" class="form-label">NO TELEPON</label>
                                 <input type="text" class="form-control" id="NO-TELEPON" aria-describedby="emailHelp"
-                                    style="height: 50px" value="" name="nomer_telepon">
+                                    style="height: 50px" value="{{ $pass->nomer_telepon_admin }}" name="nomer_telepon_admin">
                             </div>
                         </div>
                         <div class="row text">
                             <div class="column">
                                 <label for="NIP" class="form-label">NIP</label>
                                 <input type="text" class="form-control" id="NIP" aria-describedby="emailHelp"
-                                    style="height: 50px" value="" name="NIP">
+                                    style="height: 50px" value="{{ $pass->admin_NIP }}" name="admin_NIP">
                             </div>
                             <div class="column">
                                 <label for="EMAIL" class="form-label">EMAIL</label>
                                 <input type="email" class="form-control" id="EMAIL"
-                                    aria-describedby="emailHelp"style="height: 50px" value="" name="email">
+                                    aria-describedby="emailHelp"style="height: 50px" value="{{ $pass->admin_email }}" name="admin_email">
                             </div>
                         </div>
                         <div class="row">
@@ -110,19 +114,19 @@
                 {{-- Keamanan Page --}}
                 <div class="tab tab-pane fade p-3" id="nav-keamanan" role="tabpanel"
                     aria-labelledby="nav-keamanan-tab">
-                    <form action="" method="post">
+                    <form action="{{ url('/keamananAdmin/'.$pass->id) }}" method="post">
                         @csrf
                         @method('put')
                         <div class="row text">
                             <div class="column">
                                 <label for="Pass-lama" class="form-label">PASSWORD LAMA</label>
                                 <input type="text" class="form-control" id="Pass-lam"
-                                    aria-describedby="emailHelp" style="height: 50px" name="pass_lama">
+                                    aria-describedby="emailHelp" style="height: 50px" name="password_lama">
                             </div>
                             <div class="column">
                                 <label for="Pass-baru" class="form-label">PASSWORD BARU</label>
                                 <input type="text" class="form-control" id="Pass-bar"
-                                    aria-describedby="emailHelp" style="height: 50px" name="pass_baru">
+                                    aria-describedby="emailHelp" style="height: 50px" name="password_baru">
                             </div>
                         </div>
                         <div class="row" style="height: 30vh">

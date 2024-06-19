@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('distribusi');
             $table->timestamps();
             
-            $table->foreign('odc_id')->references('odc_id')->on('ODC');
+            $table->foreign('odc_id')->references('odc_id')->on('ODC')->onDelete('cascade');
         });
         // Schema::drop('ODP');
     }

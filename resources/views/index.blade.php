@@ -134,7 +134,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item"
-                                    href="{{ url('/profil/' . Session('profilTeknisi')->id . '/edit') }}"
+                                    href="{{ url('/profil/'.Session('profilTeknisi')->id .'/edit') }}"
                                     style="height: 50px;width: 230px;font-size: 20px">Account Setting</a>
                             </li>
                             <li><a class="dropdown-item" href="{{ url('/logout') }}"

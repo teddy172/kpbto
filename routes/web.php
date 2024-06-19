@@ -13,7 +13,9 @@ use App\Http\Controllers\{
     cariOdcController,
     cariOdpController,
     assuranceController,
-    tindakanController
+    tindakanController,
+    adminProfilController,
+    adminAssuranceController
 };
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Auth\Middleware\adminAuth;
@@ -47,13 +49,20 @@ Route::get('/admin/login', [adminSessionController::class, 'index']);//halaman l
 Route::get('/admin/logout', [adminSessionController::class, 'logout']);//logout
 Route::post('/admin/login/auth', [adminSessionController::class, 'login']);//login post
 
-Route::get('/odc/search', [odcController::class, 'CARI']); //search odc
-Route::get('/odp/search', [odpController::class, 'CARI']); //search odp
+Route::get('/odc/search', [odcController::class, 'CARI']); //search admin odc
+Route::get('/odp/search', [odpController::class, 'CARI']); //search admin odp
 
-Route::resource('/odc', odcController::class); //halaman odc admin
+Route::resource('/odc', odcController::class)->middleware('adminLoginPass'); //halaman odc admin
 Route::resource('/odp', odpController::class); //halaman odp admin
 
-Route::get('/profil/{User}', [profilController::class, 'index']); //tidak terpakai
+Route::get('/admin/registration', [adminProfilController::class, 'create']); //halaman regis admin
+Route::post('/admin/signed', [adminProfilController::class, 'store']); //input account baru admin
+Route::get('/profilAdmin/{admin}/edit', [adminProfilController::class, 'edit']); //halaman profil
+Route::put('/profilAdmin/{admin}', [adminProfilController::class, 'update']); //merubah data diri
+Route::put('/keamananAdmin/{admin}', [adminProfilController::class, 'update']); //merubah password user
+
+Route::get('/admin/assuranceCari', [adminAssuranceController::class, 'CARI']); //search odc
+Route::resource('/adminAssurance', adminAssuranceController::class);//halaman admin assurance
 
 
 //user route
@@ -63,10 +72,10 @@ Route::get('/logout', [sessionController::class, 'logout']); //logout
 Route::post('/login/auth', [sessionController::class, 'login']); //login
 
 Route::get('/ODC/cari', [cariOdcController::class, 'search']); //search odc
-Route::resource('/ODC', cariOdcController::class)->middleware('loginpass');
+Route::resource('/ODC', cariOdcController::class)->middleware('loginpass');//halaman odc
 
 Route::get('/ODP/cari', [cariOdpController::class, 'search']); //search odp
-Route::resource('/ODP', cariOdpController::class)->middleware('loginpass');
+Route::resource('/ODP', cariOdpController::class)->middleware('loginpass');//halaman odp
 
 Route::get('/absen', [presensiController::class, 'index']); //halaman presensi
 Route::post('/presensi', [presensiController::class, 'kehadiran']); // input presensi
@@ -77,7 +86,7 @@ Route::put('/keamanan/{User}', [profilController::class, 'update']); //merubah p
 
 Route::get('/assurance/{assurance}', [assuranceController::class, 'index']); //halaman assurance
 Route::get('/keberangkatan/{assurance}', [assuranceController::class, 'edit']); //halaman keberangkatan
-Route::put('/assurance/update/{assurance}', [assuranceController::class, 'update']); //update waktu
+Route::put('/assurance/update/{assurance}', [assuranceController::class, 'update']); //update waktu assurance
 
 Route::get('/tindakan/{tindakan}', [tindakanController::class, 'index']);//halaman tindakan assurance
 Route::post('/tindakan/tambah', [tindakanController::class, 'create']);//tambah tindakan

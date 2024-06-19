@@ -25,7 +25,7 @@
         <div class="nav-bar">
             <div class="row">
                 <div class="column" style= "align-items: start;">
-                    <a href="/"><img src="../image/home.png" style="color:#FFFFFF" alt=""></a>
+                    <a href="/admin"><img src="../image/home.png" style="color:#FFFFFF" alt=""></a>
                 </div>
                 <div class="column" id="text" style="color: #FFFFFF">
                     ODP
@@ -39,16 +39,20 @@
     {{-- Search bar --}}
     <div class="search-bar-container">
         <div class="input-group mb-3" id="search-bar">
-            <form role="search" Action="{{ url('/ODC/cari') }}" class="input-group mb-3">
+            <form role="search" Action="{{ url('/odp/search') }}" class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Masukkan Kode ODP"
                     aria-describedby="button-addon2" style="height: 50px;border-radius: 20p 0px 0px 20px"
-                    name="search">
+                    name="Cari">
                 <button class="btn btn-light" type="submit" id="button-addon2"
                     style="width: 50px;height: 50px;justify-content: center;align-items: center;border-width: 1px;border-style: groove;border-color: #B1B1AF"><img
                         src="../image/search.png" style="width: 30px;height: 30px;padding-right:5px;"></button>
             </form>
         </div>
     </div>
+
+    <div class="row">
+			@include('/layout/pesan')
+	</div>   
 
     {{-- Body --}}
     <div class="table-container" id="text">
@@ -57,108 +61,34 @@
                 <thead>
                     <tr>
                         <th class="" scope="col">No</th>
-                        <th scope="">Kode ODC</th>
+                        <th scope="">Kode ODP</th>
                         <th scope="">Lokasi</th>
+                        <th scope="">Status</th>
                         <th scope="">Action</th>
                         {{-- <th scope="col"></th> --}}
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
+                    @foreach ($data as $item)
+                    <tr onclick="window.location.href='{{ url('/odp/'.$item->odp_id) }}'">
+                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td>{{ $item->nama_odp }}</td>
+                        <td>{{ $item->lokasi }}</td>
+                        <td>{{ $item->status }}</td>
+                        <td> 
+                            <a href="{{ url('/odp/'.$item->odp_id.'/edit') }}">
+                                <button type="button" class="btn btn-success">Edit</button>
+                            </a>
                             <span>
-                                <a href=""><button type="button" class="btn btn-danger">Delete</button></span>
-                        </td></a>
+                                <form class="d-inline" action="{{ url('/odp/'.$item->odp_id) }}" method='post'>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" >Delete</button>
+                                </form>
+                            </span>
+                        </td>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href=""><button type="button" class="btn btn-danger">Delete</button></span>
-                        </td></a>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href=""><button type="button" class="btn btn-danger">Delete</button></span>
-                        </td></a>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href=""><button type="button" class="btn btn-danger">Delete</button></span>
-                        </td></a>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href=""><button type="button" class="btn btn-danger">Delete</button></span>
-                        </td></a>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href=""><button type="button" class="btn btn-danger">Delete</button></span>
-                        </td></a>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href=""><button type="button"
-                                        class="btn btn-danger">Delete</button></span>
-                        </td></a>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href=""><button type="button"
-                                        class="btn btn-danger">Delete</button></span>
-                        </td></a>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href=""><button type="button"
-                                        class="btn btn-danger">Delete</button></span>
-                        </td></a>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
-                            <span>
-                                <a href=""><button type="button"
-                                        class="btn btn-danger">Delete</button></span>
-                        </td></a>
-                    </tr>
-
+                    @endforeach
                 </tbody>
             </table>
 
@@ -166,36 +96,23 @@
             <div class="pagination-container">
                 <div class="row">
                     <div class="column" style="align-items: start">
-                        <a href="">
+                        <a href="{{ url('/odp/create') }}">
                             <button style="background: #00AB66;border: none" type="button"
                                 class="btn btn-primary btn-lg">Tambah</button>
                         </a>
                     </div>
-                    <div class="column"></div>
-                    <div class="column" style="align-items: end;margin-top: 5px">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
-
             </div>
+
         </div>
     </div>
 </body>
-
+<style>
+    .table-group-divider tr {
+        cursor: pointer;
+    }
+    .table-group-divider a {
+        text-decoration: none;
+    }
+</style>
 </html>

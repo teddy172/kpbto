@@ -108,8 +108,11 @@ class cariOdpController extends Controller
 
     public function search(Request $request){
         $cari = $request->input('search');
-        $odp = odp::where('status', 'up')->where('nama_odp', 'like', "%".$cari."%")->orwhere('lokasi', 'like', "%".$cari."%")
-        ->first();
+        $odp = odp::where('status', 'up')
+                    ->where(function($query) use ($cari) {
+                        $query->where('nama_odp', 'like', "%".$cari."%")
+                            ->orWhere('lokasi', 'like', "%".$cari."%");
+                    })->first();
         return view('cariodp')->with('data', $odp);
     }
 }

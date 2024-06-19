@@ -8,11 +8,6 @@ use Illuminate\Support\Facades\Hash;
 
 class profilController extends Controller
 {
-    public function index($id){
-        $user = User::where('id', $id)->first();//tidak terpakai
-        return view('profilTeknisi')->with('profil', $user);
-    }
-
     public function edit(string $id){
         $user = User::where('id', $id)->first();
         return view('account')->with('pass', $user);

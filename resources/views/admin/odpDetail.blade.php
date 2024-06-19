@@ -1,44 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FTTH</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
-	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/adminODC.css">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-iso.css">
+    <title>ODP</title>
 </head>
 
+<body>
+    {{-- Bootstrap JS --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    {{-- Bootstrap JS --}}
 
-<!---------------------body------------------------->
-<body style="background:#e4e9f7;">
-<div class="">
-    <div class="kartu">
-        <a href='/odp'><button type="button" class="btn btn-primary" style="position: relative; left:40px; top:20px;">Kembali</button></a>
-        <br>
-        <br>
-            <h1>ID odp:</h1>
-                <h2>{{ $odp->nama_odp }}</h2>
-            <br>
-            <h1>lokasi:</h1>
-                <h2>{{ $odp->lokasi}}</h2>
-            <br>
-            <h1>Kordinat:</h1>
-                <h2>{{ $odp->kordinat}}</h2>
-            <br>
-            <h1>Port:</h1>
-                <h2>{{ $odp->port}}</h2>
-            <br>
-            <h1>Sisa port:</h1>
-                <h2>{{ $odp->sisa_port}}</h2>
-            <br>
-            <h1>Status:</h1>
-                <h2>{{ $odp->status}}</h2>
-            <br>
-            <h1>Distribusi:</hr>
-                <h2>{{ $odp->distribusi}}</h2>
+
+    {{-- navbar --}}
+    <div class="nav-container">
+        <div class="nav-bar">
+            <div class="row">
+                <div class="column" style= "align-items: start;">
+                    <a href="/admin"><img src="../image/home.png" style="color:#FFFFFF" alt=""></a>
+                </div>
+                <div class="column" id="text" style="color: #FFFFFF">
+                    ODC Detail
+                </div>
+                <div class="column">
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
+    {{-- Body --}}
+    <div class="table-container-primary" id="text">
+        <div class="table-box-primary">
+        <div class="row-data" id="text-data-tittle">
+                    <div class="column-data">
+                        Kode ODP <br>
+                        <input class="form-control" type="text" placeholder="{{ $odp->nama_odp }}" aria-label="default input example"
+                            name="nama_odc" >
+                    </div>
+                    <div class="column-data">
+                        Lokasi <br>
+                        <input class="form-control" type="text" placeholder="{{ $odp->lokasi }}" aria-label="default input example"
+                            name="lokasi" >
+                    </div>
+                    <div class="column-data">
+                        Koordinat <br>
+                        <input class="form-control" type="text" placeholder="{{ $odp->kordinat }}" aria-label="default input example"
+                            name="kordinat" >
+                    </div>
+                </div>
+                <div class="row-data" id="text-data-tittle">
+                    <div class="column-data">
+                        Port Terpakai <br>
+                        <input class="form-control" type="text" placeholder="{{ $odp->port_terpakai }}" aria-label="default input example"
+                            name="port_terpakai" >
+                    </div>
+                    <div class="column-data">
+                        Port Sisa <br>
+                        <input class="form-control" type="text" placeholder="{{ $odp->sisa_port }}" aria-label="default input example"
+                            name="sisa_port" >
+                    </div>
+                    <div class="column-data">
+                        Total Port <br>
+                        <input class="form-control" type="text" placeholder="{{ $odp->port }}" aria-label="default input example"
+                            name="port" >
+                    </div>
+                </div>
+                <div class="row-data" id="text-data-tittle">
+                    <div class="column-data">
+                        Status <br>
+                        <input class="form-control" type="text" placeholder="{{ $odp->status }}" aria-label="default input example"
+                            name="status">
+                    </div>
+                    
+                </div>
+        </div>
+    </div>
+    </div>
 </body>
+
 </html>

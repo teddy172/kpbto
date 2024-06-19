@@ -7,9 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
  </head>
-  <body id="hal-masuk">
+  <body id="hal-masuk"> 
     <div class="kotak-masuk">
-	@include('/layout/pesan')
+		<div class="row">
+			@include('/layout/pesan')
+		</div>   
     	<h2>Login</h2>
     	<form action="{{url('/admin/login/auth')}}" method="POST">
 			@csrf
@@ -18,7 +20,7 @@
     		<input type="submit" name="submit" value="Login" class="tombol-masukan">
     	</form>
     	
-		<p style="text-align: right;"><a href="regis-user.php">Registrasi</a></p>
+		<p style="text-align: right;"><a href="/admin/registration">Registrasi</a></p>
     </div>
   </body>
 </html>

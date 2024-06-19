@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit ODC</title>
-    <link rel="stylesheet" type="text/css" href="../css/adminEditODC.css">
-    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-iso.css">
+    <link rel="stylesheet" type="text/css" href="../../css/adminEditODC.css">
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap-iso.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
         <div class="nav-bar">
             <div class="row">
                 <div class="column" style= "align-items: start;">
-                    <a href="/"><img src="../image/home.png" style="color:#FFFFFF" alt=""></a>
+                    <a href="/admin"><img src="../../image/home.png" style="color:#FFFFFF" alt=""></a>
                 </div>
                 <div class="column" id="text" style="color: #FFFFFF">
                     EDIT ODC
@@ -37,70 +37,76 @@
         </div>
     </div>
 
+    <div class="row">
+        <br>
+		@include('/layout/pesan')
+	</div>   
+
     {{-- Body --}}
     <div class="data-container">
         <div class="data-box">
-            <form Action="{{ url('/ODC ') }}" method="post">
+            <form Action="{{ url('/odc/'.$data->odc_id) }}" method="post">
                 @csrf
+                @method('put')
                 <div class="row-data" id="text-data-tittle">
                     <div class="column-data">
                         Kode ODC <br>
                         <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="nama_odc" value="{{ Session::get('nama_odc') }}">
+                            name="nama_odc" value="{{ $data->nama_odc}}">
                     </div>
                     <div class="column-data">
                         Lokasi <br>
                         <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="lokasi" value="{{ Session::get('lokasi') }}">
+                            name="lokasi" value="{{ $data->lokasi }}">
                     </div>
                     <div class="column-data">
                         Koordinat <br>
                         <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="kordinat" value="{{ Session::get('kordinat') }}">
+                            name="kordinat" value="{{ $data->kordinat }}">
                     </div>
                 </div>
                 <div class="row-data" id="text-data-tittle">
                     <div class="column-data">
                         Port Terpakai <br>
                         <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="port_terpakai" value="{{ Session::get('port_terpakai') }}">
+                            name="port_terpakai" value="{{ $data->port_terpakai }}">
                     </div>
                     <div class="column-data">
                         Port Sisa <br>
                         <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="sisa_port" value="{{ Session::get('sisa_port') }}">
+                            name="sisa_port" value="{{ $data->sisa_port }}">
                     </div>
                     <div class="column-data">
                         Total Port <br>
                         <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="port" value="{{ Session::get('port') }}">
+                            name="port" value="{{ $data->port }}">
                     </div>
                 </div>
                 <div class="row-data" id="text-data-tittle">
                     <div class="column-data">
                         Slot Terpakai <br>
                         <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="slot_terpakai" value="{{ session::get('slot_terpakai') }}">
+                            name="slot_terpakai" value="{{ $data->slot_terpakai }}">
                     </div>
                     <div class="column-data">
                         Slot Sisa <br>
                         <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="sisa_slot" value="{{ Session::get('sisa_slot') }}">
+                            name="sisa_slot" value="{{ $data->sisa_slot }}">
                     </div>
                     <div class="column-data">
-                        Total Slot <br>
+                        Slot <br>
                         <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="slot" value="{{ Session::get('slot') }}">
+                            name="slot" value="{{ $data->slot }}">
                     </div>
-                </div>
-                <div class="row-data" id="text-data-tittle">
                     <div class="column-data">
                         Status <br>
-                        <input class="form-control" type="text" placeholder="" aria-label="default input example"
-                            name="status" value="{{ Session::get('status') }}">
-                    </div>
-                    <div class="column-data"></div>
-                    <div class="column-data"></div>
+                        <div class="input-group">
+                            <select class="custom-select" name="status">
+                                <option selected>{{ $data->status }}</option>
+                                <option value="UP">UP</option>
+                                <option value="DOWN">DOWN</option>
+                            </select>
+                        </div>
                 </div>
                 <div class="row-data" id="text-data-tittle">
                     <div class="column-data"></div>

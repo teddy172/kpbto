@@ -47,24 +47,30 @@ class odcController extends Controller
             'nama_odc'=>'required',
             'lokasi' => 'required',
             'kordinat' => 'required',
-            'port_terpakai' => 'required',
-            'sisa_port' => 'required',
-            'port' => 'required',
-            'slot_terpakai' => 'required',
-            'sisa_slot' => 'required',
-            'slot' => 'required',
+            'port_terpakai' => 'required|integer',
+            'sisa_port' => 'required|integer',
+            'port' => 'required|integer',
+            'slot_terpakai' => 'required|integer',
+            'sisa_slot' => 'required|integer',
+            'slot' => 'required|integer',
             'status' => 'required',
         ],[
             'nama_odc.required'=>'ID ODC tidak boleh kosong',
             'lokasi.required'=>'Lokasi tidak boleh kosong',
             'kordinat.required'=>'Kordinat tidak boleh kosong',
-            'port_terpakai' => 'port terpakai tidak boleh kosong',
+            'port_terpakai.required' => 'port terpakai tidak boleh kosong',
             'sisa_port.required'=>'Sisa port tidak boleh kosong',
             'port.required'=>'Port tidak boleh kosong',
-            'slot_terpakai' => 'slot terpakai tidak boleh kosong',
+            'slot_terpakai.required' => 'slot terpakai tidak boleh kosong',
             'sisa_slot.required'=>'Sisa slot tidak boleh kosong',
             'slot.required'=>'Slot tidak boleh kosong',
-            'status' => 'tidak boleh kosong',
+            'status.required' => 'tidak boleh kosong',
+            'slot_terpakai.integer' => 'Slot terpakai harus berupa angka!',
+            'port_terpakai.integer' => 'Port terpakai harus berupa angka!',
+            'slot.integer' => 'Slot harus berupa angka!',
+            'sisa_slot.integer' => 'Sisa slot harus berupa angka!',
+            'port.integer' => 'Port harus berupa angka!',
+            'sisa_port.integer' => 'Sisa port harus berupa angka!',
         ]);
         $data = [
             'nama_odc' => strtoupper($request->input('nama_odc')),
@@ -80,7 +86,7 @@ class odcController extends Controller
         ];
         odc::create($data);
         // return redirect('odc')->with(['success' => 'Data Berhasil Disimpan!']);;
-        return redirect('/odc')->with("status", "berhasil menambahkan!");
+        return redirect('/odc')->with("pesan", "berhasil menambahkan!");
     }
 
     /**
@@ -121,17 +127,21 @@ class odcController extends Controller
             'nama_odc'=>'required',
             'lokasi' => 'required',
             'kordinat' => 'required',
+            'slot_terpakai' => 'required',
             'slot' => 'required',
             'sisa_slot' => 'required',
+            'port_terpakai' => 'required',
             'port' => 'required',
             'sisa_port' => 'required',
             'status' => 'required',
         ],[
-            'nama_odc.required'=>'ID ODC tidak boleh kosong',
+            'nama_odc.required'=>'KODE ODC tidak boleh kosong',
             'lokasi.required'=>'Lokasi tidak boleh kosong',
             'kordinat.required'=>'Kordinat tidak boleh kosong',
+            'slot_terpakai.required' => 'slot terpakai tidak boleh kosong',
             'slot.required'=>'Slot tidak boleh kosong',
             'sisa_slot.required'=>'Sisa slot tidak boleh kosong',
+            'port_terpakai.required' => 'port terpakai tidak boleh kosong',
             'port.required'=>'Port tidak boleh kosong',
             'sisa_port.required'=>'Sisa port tidak boleh kosong',
             'status.required'=>'Status tidak boleh kosong',
@@ -140,14 +150,16 @@ class odcController extends Controller
             'nama_odc' => $request->input('nama_odc'),
             'lokasi' => $request->input('lokasi'),
             'kordinat' => $request->input('kordinat'),
+            'slot_terpakai' => $request->input('slot_terpakai'),
             'slot' => $request->input('slot'),
             'sisa_slot' => $request->input('sisa_slot'),
+            'port_terpakai' => $request->input('port_terpakai'),
             'port' => $request->input('port'),
             'sisa_port' => $request->input('sisa_port'),
             'status' => $request->input('status'),
         ];
         odc::where('odc_id', $id)->update($data);
-        return redirect('/odc');
+        return redirect('/odc')->with("pesan", "berhasil merubah!");
     }
 
     /**
@@ -156,7 +168,7 @@ class odcController extends Controller
     public function destroy(string $id)
     {
         odc::where('odc_id', $id)->delete();
-        return redirect('/odc');
+        return redirect('/odc')->with("pesan", "berhasil menghapus!");
     }
     /**
      * mencari data terkait melalui fitur search.
