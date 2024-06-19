@@ -66,6 +66,7 @@ Route::resource('/adminAssurance', adminAssuranceController::class);//halaman ad
 
 
 //user route
+Route::get('/page', [pageController::class, 'page']);
 Route::get('/', [pageController::class, 'index'])->middleware('loginpass'); //halaman home
 Route::get('/login', [sessionController::class, 'index']); //halaman login
 Route::get('/logout', [sessionController::class, 'logout']); //logout

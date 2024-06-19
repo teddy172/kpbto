@@ -8,6 +8,9 @@ use App\Models\odc; //data diambil dari database melalui model
 
 class pageController extends Controller
 {
+    function page(){
+        return view("landingpage");
+    }
     function index(){
         return view("index");
     }
