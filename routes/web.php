@@ -47,37 +47,37 @@ Route::get('/admin/login', [adminSessionController::class, 'index']);//halaman l
 Route::get('/admin/logout', [adminSessionController::class, 'logout']);//logout
 Route::post('/admin/login/auth', [adminSessionController::class, 'login']);//login post
 
-Route::get('/odc/search', [odcController::class, 'CARI']);//search odc
-Route::get('/odp/search', [odpController::class, 'CARI']);//search odp
+Route::get('/odc/search', [odcController::class, 'CARI']); //search odc
+Route::get('/odp/search', [odpController::class, 'CARI']); //search odp
 
-Route::resource('/odc', odcController::class);//halaman odc admin
-Route::resource('/odp', odpController::class);//halaman odp admin
+Route::resource('/odc', odcController::class); //halaman odc admin
+Route::resource('/odp', odpController::class); //halaman odp admin
 
-Route::get('/profil/{User}', [profilController::class, 'index']);//tidak terpakai
+Route::get('/profil/{User}', [profilController::class, 'index']); //tidak terpakai
 
 
 //user route
-Route::get('/', [pageController::class, 'index'])->middleware('loginpass');//halaman home
-Route::get('/login', [sessionController::class, 'index']);//halaman login
-Route::get('/logout', [sessionController::class, 'logout']);//logout
-Route::post('/login/auth', [sessionController::class, 'login']);//login
+Route::get('/', [pageController::class, 'index'])->middleware('loginpass'); //halaman home
+Route::get('/login', [sessionController::class, 'index']); //halaman login
+Route::get('/logout', [sessionController::class, 'logout']); //logout
+Route::post('/login/auth', [sessionController::class, 'login']); //login
 
-Route::get('/ODC/cari', [cariOdcController::class, 'search']);//search odc
+Route::get('/ODC/cari', [cariOdcController::class, 'search']); //search odc
 Route::resource('/ODC', cariOdcController::class)->middleware('loginpass');
 
-Route::get('/ODP/cari', [cariOdpController::class, 'search']);//search odp
+Route::get('/ODP/cari', [cariOdpController::class, 'search']); //search odp
 Route::resource('/ODP', cariOdpController::class)->middleware('loginpass');
 
-Route::get('/absen', [presensiController::class, 'index']);//halaman presensi
-Route::post('/presensi', [presensiController::class, 'kehadiran']);// input presensi
+Route::get('/absen', [presensiController::class, 'index']); //halaman presensi
+Route::post('/presensi', [presensiController::class, 'kehadiran']); // input presensi
 
-Route::get('/profil/{User}/edit', [profilController::class, 'edit']);//halaman profil
-Route::put('/profil/{User}', [profilController::class, 'update']);//merubah data diri
-Route::put('/keamanan/{User}', [profilController::class, 'update']);//merubah password user
+Route::get('/profil/{User}/edit', [profilController::class, 'edit']); //halaman profil
+Route::put('/profil/{User}', [profilController::class, 'update']); //merubah data diri
+Route::put('/keamanan/{User}', [profilController::class, 'update']); //merubah password user
 
-Route::get('/assurance/{assurance}', [assuranceController::class, 'index']);//halaman assurance
-Route::get('/keberangkatan/{assurance}', [assuranceController::class, 'edit']);//halaman keberangkatan
-Route::put('/assurance/update/{assurance}', [assuranceController::class, 'update']);//update waktu
+Route::get('/assurance/{assurance}', [assuranceController::class, 'index']); //halaman assurance
+Route::get('/keberangkatan/{assurance}', [assuranceController::class, 'edit']); //halaman keberangkatan
+Route::put('/assurance/update/{assurance}', [assuranceController::class, 'update']); //update waktu
 
 Route::get('/tindakan/{tindakan}', [tindakanController::class, 'index']);//halaman tindakan assurance
 Route::post('/tindakan/tambah', [tindakanController::class, 'create']);//tambah tindakan

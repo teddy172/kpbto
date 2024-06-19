@@ -17,7 +17,8 @@ body {
     background-image: url("../image/bg_web.png");
 }
 
-.nav-container {
+
+.nav-container-navbar {
     width: 100vw;
     height: 100px;
     display: flex;
@@ -25,7 +26,7 @@ body {
     align-items: start;
 }
 
-.nav-bar {
+.nav-bar-navbar {
     background: #F04636;
     width: 95%;
     height: 80px;
@@ -68,64 +69,90 @@ body {
     height: 100%;
 }
 
-.data-container {
+.profile-container {
+    width: 100vw;
+    height: 25vh;
+    padding: 20px;
+    /* background: cyan; */
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.data-container {
     width: 100vw;
-    height: 550px;
-    margin: 50px 25px;
+    height: 80vh;
+    padding: 10px;
+    /* background: brown; */
 }
 
-.data-box {
+.bio-container {
+    padding: 20px 30px 10px 30px;
+}
+
+.tab {
+    width: 100%;
+    align-items: center;
+}
+
+.tab-content {
+    height: 60vh;
+    width: 100%;
     background: #FEFEFE;
-    height: 100%;
-    width: 900px;
-    border-radius: 20px;
-    border-radius: 20px;
-    border-style: groove;
     border-width: 1px;
-    border-color: #B1B1AF;
-    padding: 30px;
+    border: rgba(0, 0, 0, 0.15);
+    border-style: solid;
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    align-items: start;
+    padding: 50px 30px 0px 30px;
 }
 
-.row-data {
+.row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 25%;
-    align-items: center;
-    justify-content: space-evenly;
 }
 
-.column-data {
+.column {
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
-    align-items: start;
-    justify-content: start;
-    width: 100%;
-    height: 100%;
-    padding: 20px 10px 20px 30px;
+    margin: 50px 20px;
 }
 
+.column-one {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin: 50px 20px;
+    justify-content: center;
+    /* background: green; */
+}
 
-#text {
+.text {
     font-family: Inter-Semibold;
     font-size: 30px;
     color: #36454F;
 }
 
-#text-data-tittle {
-    font-family: Inter-Semibold;
-    font-size: 26px;
-    color: #6C757D;
-}
 
-#text-data {
-    font-family: Inter-Semibold;
-    font-size: 26px;
-    color: #28282B;
+@media screen and (max-width: 1080px) {
+    /* .row {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+    } */
+
+    .row {
+        flex-direction: column;
+    }
+
+    .column-one {
+        flex: 1;
+    }
+
 }

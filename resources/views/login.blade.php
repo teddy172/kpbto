@@ -17,35 +17,44 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     {{-- Bootstrap JS --}}
-    <div class="screen">
-        <div class="form-container">
-            <div class="title" id="text">
+
+    <div class="data-container">
+        <div class="data-box" id="text">
+            <div class="row">
                 LOGIN
             </div>
-            @include('/layout/pesan')
-            <div class="form-detail">
-                <form style="width: 90% ;height: 100%;" action="{{url('/login/auth')}}" method="POST">
+            <form style="width: 100% ;height: 100%;" action="{{ url('/login/auth') }}" method="POST">
                 @csrf
+                <div class="row">
                     <div class="mb-3" style="width: 100%">
                         <label id="text" for="NIP" class="form-label">NIP</label>
-                        <input type="text" class="form-control" id="NIP" name="NIP" placeholder="NIP" aria-describedby="emailHelp" value="{{ Session::get('NIP') }}">
+                        <input type="text" class="form-control" id="NIP" name="NIP" placeholder="NIP"
+                            aria-describedby="emailHelp" value="{{ Session::get('NIP') }}">
                     </div>
+                </div>
+                <div class="row">
                     <div class="mb-3" style="width: 100%">
                         <label id="text" for="password" class="form-label">PASSWORD</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Password">
                     </div>
+                </div>
+                <div class="row">
                     <div style="display: flex; justify-content: center; align-content: center;margin-top: 50px">
                         <button id="text" type="submit" class="btn btn-primary"
-                            style="width: 150px;height: 60px;color: #ffffff;background: #00AB66;border: none" name="submit" value="Login">
+                            style="width: 150px;height: 60px;color: #ffffff;background: #00AB66;border: none"
+                            name="submit" value="Login">
                             SIGN IN</button>
                     </div>
+                </div>
+                <div class="row">
+                    @include('/layout/pesan')
+                </div>
 
-                </form>
-            </div>
+            </form>
+
         </div>
     </div>
-
-
 </body>
 
 </html>

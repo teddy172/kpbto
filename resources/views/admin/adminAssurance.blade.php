@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="../css/adminODC.css">
+    <title>Admin Assurance</title>
+    <link rel="stylesheet" type="text/css" href="../css/adminAssurance.css">
     <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-iso.css">
-    <title>ODC</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                     <a href="/"><img src="../image/home.png" style="color:#FFFFFF" alt=""></a>
                 </div>
                 <div class="column" id="text" style="color: #FFFFFF">
-                    ODC
+                    ADMIN ASSURANCE
                 </div>
                 <div class="column">
                 </div>
@@ -40,7 +40,7 @@
     <div class="search-bar-container">
         <div class="input-group mb-3" id="search-bar">
             <form role="search" Action="{{ url('/ODC/cari') }}" class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Masukkan Kode ODC"
+                <input type="text" class="form-control" placeholder="Masukkan Nomor Incident"
                     aria-describedby="button-addon2" style="height: 50px;border-radius: 20p 0px 0px 20px"
                     name="search">
                 <button class="btn btn-light" type="submit" id="button-addon2"
@@ -57,21 +57,19 @@
                 <thead>
                     <tr>
                         <th class="" scope="col">No</th>
-                        <th scope="">Kode ODC</th>
-                        <th scope="">Lokasi</th>
+                        <th scope="">Nomor Incident</th>
+                        <th scope="">Teknisi</th>
                         <th scope="">Status</th>
                         <th scope="">Action</th>
-                        {{-- <th scope="col"></th> --}}
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -81,11 +79,10 @@
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -95,11 +92,10 @@
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -109,11 +105,10 @@
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -123,11 +118,10 @@
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -137,11 +131,10 @@
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -151,11 +144,10 @@
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -165,11 +157,10 @@
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -179,11 +170,10 @@
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -193,11 +183,10 @@
                     </tr>
                     <tr>
                         <th scope="row">1</th>
-                        <td>ODC-KPS-FWA</td>
-                        <td>Kapasan</td>
-                        <td>Up</td>
-                        <td> <a href="resources\views\admin\odcEdit.blade.php"><button type="button"
-                                    class="btn btn-success">Edit</button></a>
+                        <td>INC12345 </td>
+                        <td>Fajar</td>
+                        <td>Belum Selesai</td>
+                        <td> <a href=""><button type="button" class="btn btn-success">Edit</button></a>
                             <span>
                                 <a href="">
                                     <button type="button" class="btn btn-danger">Delete</button>
@@ -205,17 +194,16 @@
                             </span>
                         </td>
                     </tr>
-
-
                 </tbody>
             </table>
+
             {{-- Pagination --}}
             <div class="pagination-container">
                 <div class="row">
                     <div class="column" style="align-items: start">
                         <a href="">
                             <button style="background: #00AB66;border: none" type="button"
-                                class="btn btn-primary btn-lg">Tambah</button>
+                                class="btn btn-primary btn-lg">ASSIGN</button>
                         </a>
                     </div>
                     <div class="column"></div>
@@ -242,6 +230,8 @@
             </div>
         </div>
     </div>
+
+
 </body>
 
 </html>

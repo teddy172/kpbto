@@ -2,6 +2,7 @@
     font-family: Inter-Regular;
     src: url(../font/Inter-Regular.ttf);
 }
+
 @font-face {
     font-family: Inter-Medium;
     src: url(../font/Inter-Medium.ttf);
@@ -13,7 +14,7 @@
 }
 
 body {
-    background-image:url("../image/bg_web.png") ;
+    background-image: url("../image/bg_web.png");
 }
 
 .nav-container {
@@ -22,66 +23,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: start;
-    margin-bottom: 50px;
 }
 
 .nav-bar {
-    background: #F54336;
-    width: 100%;
-    height: 90%;
-    padding: 30px;
-}
-
-#name-container{
-    font-family: Inter-Semibold;
-    font-size: 30px;
-    color: #FFFFFF;
-}
-
-.dropdown-menu{
-    font-family: Inter-Semibold;
-    font-size: 30px;
-    color: #36454F;
-}
-
-.row-nav {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: start;
-}
-
-.column-nav {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-    align-items: start;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.menu-container{
-    width: 100vw;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu-box{
-    margin: 60px 100px;
-    background: #FEFEFE;
-    width: 100%;
-    height: 100%;
+    background: #F04636;
+    width: 95%;
+    height: 80px;
+    margin: 0px 20px;
+    margin-top: 20px;
     border-radius: 20px;
-    border-style: groove;
-    border-width: 1px;
-    border-color: #B1B1AF;
-    padding: 30px;
 }
 
 .row {
@@ -89,7 +39,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 50%;
+    height: 100%;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -99,14 +49,35 @@ body {
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     margin: 50px 20px;
     width: 100%;
     height: 100%;
 }
 
-.card.presensi{
+.menu-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 480px;
+    margin: 150px 0px;
+}
+
+.menu-box{
+    background: #F8F9FA;
+    height: 100%;
+    width: 1600px;
+    border-radius: 20px;
+    border-radius: 20px;
+    border-style: groove;
+    border-width: 1px;
+    border-color: #B1B1AF;
+    padding: 30px;
+}
+
+.card.presensi {
     margin-left: 25px;
     margin-right: 25px;
     margin-top: 20px;
@@ -116,25 +87,42 @@ body {
     background: #F8F9FA;
 }
 
-.icon-bg{
+.icon-bg {
     width: 100%;
-    height: 80%;
+    height: 90%;
     border-radius: 10px;
     padding: 10px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
-.menu-icon{
-    padding: 5px;
-}
-
-.card.text{
+.card.text {
     height: 20%;
-    background:transparent;
+    background: transparent;
     border-width: 0px;
     text-align: center;
-    padding-top: 10px; 
+    padding-top: 10px;
     font-family: Inter-Semibold;
     font-size: 30px;
     color: #36454F;
+}
+
+#text {
+    font-family: Inter-Semibold;
+    font-size: 30px;
+    color: #36454F;
+}
+
+#text-data-tittle {
+    font-family: Inter-Semibold;
+    font-size: 26px;
+    color: #6C757D;
+}
+
+p {
+    font-family: Inter-Semibold;
+    font-size: 26px;
+    color: #28282B;
 }
