@@ -20,7 +20,7 @@
     		<input type="submit" name="submit" value="Login" class="tombol-masukan">
     	</form>
     	
-		<p style="text-align: right;"><a href="/admin/registration">Registrasi</a></p>
+		<!-- <p style="text-align: right;"><a href="/admin/registration">Registrasi</a></p> -->
     </div>
   </body>
 </html>

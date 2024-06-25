@@ -19,7 +19,7 @@ class usersSeeder extends Seeder
             'email' => 'verina@gmail.com',
             'password' => Hash::make('verina123'),
             'created_at' =>  date('Y-m-d H:i:s'),
-            'NIP' => '322157',
+            'NIP' => '322158',
             'nomer_telepon' => '081259642316'
         ]);
     }

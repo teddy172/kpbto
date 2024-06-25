@@ -160,20 +160,22 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="card presensi"><a href="#" style="text-decoration: none">
-                            <div class="icon-bg" style="background: #418AFE"><img class="menu-icon"
-                                    src="../image/valins-icon.png"></div>
-                            <div class="card text"> VALINS </div>
+                    <div class="card presensi">
+                        <a href="/ODC" style="text-decoration: none">
+                            <div class="icon-bg" style="background: #D40033"><img class="menu-icon"
+                                src="../image/odc-icon.png">
+                            </div>
+                            <div class="card text"> CARI ODC </div>
                         </a>
                     </div>
                 </div>
                 <div class="column">
-                    <div class="card presensi"><a href="#" style="text-decoration: none">
-                            <div class="icon-bg" style="background: #4DAF4E"><img class="menu-icon"
-                                    src="../image/fullfilment-icon.png"></div>
-                            <div class="card text"> FULLFILMENT </div>
-                        </a>
-                    </div>
+                <div class="card presensi"><a href="/ODP" style="text-decoration: none">
+                                <div class="icon-bg" style="background: #FB8C00"><img class="menu-icon"
+                                        src="../image/odp-icon.png"></div>
+                                <div class="card text"> CARI ODP </div>
+                            </a>
+                        </div>
                 </div>
                 <div class="column">
                     <div class="card presensi"><a href="{{ url('/assurance/' . Session('profilTeknisi')->id) }}"
@@ -183,51 +185,7 @@
                             <div class="card text"> ASSURANCE </div>
                         </a></div>
                 </div>
-                <div class="row">
-                    <div class="column">
-                        <div class="card presensi"><a href="#" style="text-decoration: none">
-                                <div class="icon-bg" style="background: #FB8C00"><img class="menu-icon"
-                                        src="../image/maintenance-icon.png"></div>
-                                <div class="card text"> MAINTENANCE </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="card presensi"><a href="/ODC" style="text-decoration: none">
-                                <div class="icon-bg" style="background: #D40033"><img class="menu-icon"
-                                        src="../image/odc-icon.png">
-                                </div>
-                                <div class="card text"> CARI ODC </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="card presensi"><a href="/ODP" style="text-decoration: none">
-                                <div class="icon-bg" style="background: #FB8C00"><img class="menu-icon"
-                                        src="../image/odp-icon.png"></div>
-                                <div class="card text"> CARI ODP </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="card presensi"><a href="#" style="text-decoration: none">
-                                <div class="icon-bg" style="background: #6DD4D1"><img class="menu-icon"
-                                        src="../image/ont-icon.png"></div>
-                                <div class="card text"> TUKAR ONT </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-
-
-
-
-
-
-
 </body>
-
 </html>
